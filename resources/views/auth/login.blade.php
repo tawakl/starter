@@ -15,10 +15,10 @@
         <div class="form-group">
             @php $input = 'password'; @endphp
             {!! Form::password($input,['class'=>'form-control','required'=>'required','placeholder'=>trans('auth.Enter your password')])!!}
-            @if(@$errors) 
+            @if(@$errors)
             @foreach($errors->get($input) as $message)
-            <span class='help-inline text-danger'>{{ $message }}</span> 
-            @endforeach 
+            <span class='help-inline text-danger'>{{ $message }}</span>
+            @endforeach
             @endif
         </div>
         <div class="form-group">
@@ -29,6 +29,7 @@
         <!-- form-group -->
         <button class="btn btn-primary btn-block btn-signin">{{ trans('auth.Submit') }}</button>
         <p class="mg-b-0">{{trans('auth.Forgot your password')}} ? <a href="auth/forgot-password">{{ trans('auth.Forgot password') }}</a></p>
+        <p class="mg-b-0">{{trans('auth.register')}} ? <a href="auth/register">{{ trans('auth.register') }}</a></p>
         {!! Form::close() !!}
     </div>
 </div>

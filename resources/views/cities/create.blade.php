@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @inject('model','App\Models\Governorate')
 @section('page_title')
     إضافة مدينة

@@ -15,23 +15,33 @@
     </li>
 
 @endif
+
+<li class="nav-item with-sub settings {{(request()->is('*/cities*'))?"active":""}}">
+    <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
+        <i class="icon ion-ios-gear-outline"></i>
+        <span>{{trans('navigation.Cities')}}</span>
+    </a>
+    <div class="sub-item">
+        <ul>
+            <li class="{{(request()->is('*/cities*'))?"active":""}}">
+                <a href="/cities">{{trans('navigation.Cities')}}</a>
+            </li>
+
+            <li class="{{(request()->is('*/governorates*'))?"active":""}}">
+                <a href="/governorates">{{trans('navigation.Governorates')}}</a>
+            </li>
+        </ul>
+    </div><!-- dropdown-menu -->
+</li>
 {{-- only super admin can access configuration settings --}}
 @if(@auth()->user()->type == App\Starter\Users\UserEnums::SUPER_ADMIN_TYPE)
-    <li class="nav-item with-sub settings {{(request()->is('*/options*' , '*/translator*' , '*/configs*' ,'*/roles*'))?"active":""}}">
+    <li class="nav-item with-sub settings {{(request()->is('*/configs*' ,'*/roles*'))?"active":""}}">
         <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
             <i class="icon ion-ios-gear-outline"></i>
             <span>{{trans('navigation.Settings')}}</span>
         </a>
         <div class="sub-item">
             <ul>
-                <li class="{{(request()->is('*/options*'))?"active":""}}">
-                    <a href="/options">{{trans('navigation.Options')}}</a>
-                </li>
-
-                <li class="{{(request()->is('*/translator*'))?"active":""}}">
-                    <a href="/translator">{{trans('navigation.translator')}}</a>
-                </li>
-
                 <li class="{{(request()->is('*/configs*'))?"active":""}}">
                     <a href="/configs/edit">{{trans('navigation.Configurations')}}</a>
                 </li>
@@ -43,3 +53,4 @@
         </div><!-- dropdown-menu -->
     </li>
 @endif
+

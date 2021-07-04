@@ -35,12 +35,10 @@ class AuthController extends Controller
         if (env('USER_CONFIRMATION')) {
             request()->request->add(['confirmed'=>1]);
         }
-        $validator=Validator::make(request()->all(), $this->rules);
-        if ($validator->fails()) {
-            return response()->json(transformValidation($validator->errors()->messages()), 422);
-        }
+
         if ($row=$this->model->create(request()->except(['password_confirmation']))) {
-            return response()->json(['message'=>trans('api.Account has been created successfully, Please check your email')], 201);
+//            return response()->json(['message'=>trans('api.Account has been created successfully, Please check your email')], 201);
+            return redirect()->intended('/');
         }
         flash()->error(trans('auth.Failed to login'));
         return back();
@@ -58,10 +56,6 @@ class AuthController extends Controller
         $row = $this->model->where('mobile_number', trim(request('mobile_number')))->first();
         if (!$row) {
             flash()->error(trans('auth.There is no account with this mobile number'));
-            return back()->withInput();
-        }
-        if (!$row->confirmed) {
-            flash()->error(trans('auth.This account is not confirmed'));
             return back()->withInput();
         }
         if (!$row->is_active) {

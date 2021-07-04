@@ -58,42 +58,7 @@
                 <td width="25%" class="align-left">{{trans('users.Confirmed')}}</td>
                 <td width="75%" class="align-left">{{@$row->confirmed ? trans('users.Confirmed') : trans('users.Not Confirmed') }}</td>
             </tr>
-            @if(@$row->creator->name)
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.Created by')}}</td>
-                <td width="75%" class="align-left">{{@$row->creator->name}}</td>
-            </tr>
-            @endif
 
-            @if($row->supervisor()->exists())
-
-                @include('users/supervisorData')
-                
-            @endif
-
-            @if($row->employee()->exists())
-
-                @include('users/employeeData')
-                
-            @endif
-
-            @if($row->contractor()->exists())
-
-                @include('users/contractorData')
-
-            @endif
-
-            @if($row->worker()->exists())
-
-                @include('users/workerData')
-
-            @endif
-
-            @if($row->editor()->exists())
-
-                @include('users/editorData')
-
-            @endif
 
         </table>
     </div>

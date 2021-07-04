@@ -2,7 +2,7 @@
 @section('content')
 <div class="signin-right">
     <div class="signin-box">
-        {!! Form::open(['method' => 'post'] ) !!} 
+        {!! Form::open(['method' => 'post'] ) !!}
         {{ csrf_field() }}
         <h2 class="signin-title-primary">{{ trans('auth.Welcome back') }}!</h2>
         <h3 class="signin-title-secondary">{{ trans('auth.Sign up') }}.</h3>
@@ -17,7 +17,17 @@
             <span class='help-inline text-danger'>{{ $message }}</span> @endforeach @endif
         </div>
         <div class="form-group">
-            @php $input = 'mobile';
+            @php $input = 'governorate';
+            @endphp {!! Form::text($input,request($input),['class'=>'form-control','required'=>'required','placeholder'=>trans('auth.Enter your governorate')]) !!} @if(@$errors) @foreach($errors->get($input) as $message)
+            <span class='help-inline text-danger'>{{ $message }}</span> @endforeach @endif
+        </div>
+        <div class="form-group">
+            @php $input = 'city';
+            @endphp {!! Form::text($input,request($input),['class'=>'form-control','required'=>'required','placeholder'=>trans('auth.Enter your city')]) !!} @if(@$errors) @foreach($errors->get($input) as $message)
+                <span class='help-inline text-danger'>{{ $message }}</span> @endforeach @endif
+        </div>
+        <div class="form-group">
+            @php $input = 'mobile_number';
             @endphp {!! Form::text($input,request($input),['class'=>'form-control','required'=>'required','placeholder'=>trans('auth.Enter your mobile')]) !!} @if(@$errors) @foreach($errors->get($input) as $message)
             <span class='help-inline text-danger'>{{ $message }}</span> @endforeach @endif
         </div>
@@ -35,14 +45,14 @@
         </div>
         <!-- form-group -->
         <button class="btn btn-primary btn-block btn-signin">{{ trans('auth.Sign Up') }}</button>
-        <p class="mg-b-0">{{ trans('auth.Do not have an account') }}? <a href="auth/login">{{ trans('auth.Sign In') }}</a></p>
+        <p class="mg-b-0">{{ trans('auth.already have an account') }}? <a href="auth/login">{{ trans('auth.Sign In') }}</a></p>
         {!! Form::close() !!}
     </div>
 </div>
 <!-- signin-right -->
 <div class="signin-left">
     <div class="signin-box">
-        <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">{{ appName() }}<span>.</span></a></h2>
+        <h2 class="slim-logo"><a href="{{\Illuminate\Support\Facades\App::make('url')->to('/')}}/">{{ appName() }}<span>.</span></a></h2>
         <p>
             {{ welcomeMessage() }}
         </p>

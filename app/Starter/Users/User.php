@@ -44,15 +44,13 @@ class User extends Authenticatable implements JWTSubject
         'type',
         'email',
         'mobile_number',
-        'address',
-        'last_logged_in_at',
-        'confirmed',
-        'super_admin',
         'is_admin',
         'password',
         'is_active',
         'profile_picture',
-        'language'
+        'language',
+        'governorate',
+        'city'
     ];
 
     public function setPasswordAttribute($value)

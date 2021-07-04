@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Starter\Cities;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,19 +11,13 @@ class City extends Model
     public $timestamps = true;
     protected $fillable = array('name', 'governorate_id');
 
-    public function clients()
+    public function users()
     {
-        return $this->hasMany('App\Models\Client');
+        return $this->hasMany('App\Starter\users\user');
     }
 
-    public function governorate()
-    {
-        return $this->belongsTo('App\Models\City');
-    }
-
-    public function orders()
-    {
-        return $this->hasMany('App\Models\Order');
-    }
-
+//    public function governorate()
+//    {
+//        return $this->belongsTo('App\Starter\City');
+//    }
 }

@@ -1,7 +1,7 @@
 <?php
 
-Route::group(['prefix' => 'cities'], function () {
-    Route::get('/', '\App\Starter\Cities\Controllers\CityController@index')->name('cities');
+Route::group(['prefix' => 'governorates'], function () {
+    Route::get('/', '\App\Starter\Governorates\Controllers\GovernorateController@index')->name('governorates');
 
 //    Route::get('/create', '\App\Starter\Users\Controllers\UsersController@getCreate');
 //    Route::post('/create', '\App\Starter\Users\Controllers\UsersController@postCreate');

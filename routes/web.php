@@ -25,8 +25,8 @@ Route::group([
             require base_path('app/Starter/Users/Routes/roles.php');
             require base_path('app/Starter/Config/Routes/web.php');
             require base_path('app/Starter/Profile/Routes/web.php');
-            require base_path('app/Starter/Options/Routes/web.php');
-            require base_path('app/Starter/Translator/Routes/web.php');
+            require base_path('app/Starter/Cities/Routes/web.php');
+            require base_path('app/Starter/Governorates/Routes/web.php');
             Route::get('/', 'DashBoardController@getIndex');
         });
     });

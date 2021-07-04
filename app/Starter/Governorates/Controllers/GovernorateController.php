@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Starter\Cities\Controllers;
+namespace App\Starter\Governorates\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Governorate;
 use App\Starter\Cities\City;
+use App\Starter\Governorates\Governorate;
 use Illuminate\Http\Request;
 
-class CityController extends Controller
+class GovernorateController extends Controller
 {
 
     public $model;
     public $module;
 
-    public function __construct(City $model)
+    public function __construct(Governorate $model)
     {
-        $this->module = 'cities';
-        $this->title = trans('app.Cities');
+        $this->module = 'governorates';
+        $this->title = trans('app.Governorates');
         $this->model = $model;
     }
     /**
@@ -28,10 +28,10 @@ class CityController extends Controller
     {
         $data['module'] = $this->module;
 
-        $data['page_title'] = trans('app.List Cities');
-        $data['records'] = $this->model->latest()->paginate();
+        $data['page_title'] = trans('app.List Governorates');
+        $data['records'] = $this->model->paginate();
 
-        return view($this->module . '.index1', $data);
+        return view($this->module . '.index', $data);
     }
 //
 //    /**
