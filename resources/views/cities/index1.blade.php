@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('page_title')
     المدن
 @endsection
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="box-body">
-                <a href="{{url(route('cities.create'))}}" class="btn btn-primary"><i class="fa fa-plus"> </i>أضف مدينة</a>
+{{--                <a href="{{url(route('cities.create'))}}" class="btn btn-primary"><i class="fa fa-plus"> </i>أضف مدينة</a>--}}
                 @include('flash::message')
                 @if(count($records))
                     <div class="table-responsive">
@@ -40,15 +40,15 @@
                                 <tr id="removable{{$record->id}}">
                                     <td>{{$loop->iteration}}</td>
                                     <td class="text-center">{{$record->name}}</td>
-                                    <td class="text-center">{{$record->governorate->name}}</td>
+                                    <td class="text-center"></td>
                                     <td class="text-center">
-                                        <a href="{{url(route('cities.edit',$record->id))}}" class="btn btn-success btn-xs">
+                                        <a href="" class="btn btn-success btn-xs">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                     </td>
                                     <td class="text-center">
                                         <button id="{{$record->id}}" data-token="{{ csrf_token() }}"
-                                                data-route="{{URL::route('cities.destroy',$record->id)}}"
+                                                data-route=""
                                                 type="button" class="destroy btn btn-danger btn-xs"><i
                                                 class="fa fa-trash-o"></i></button>
                                     </td>

@@ -1,21 +1,45 @@
-@extends('layouts.master')
-@section('title')
-<h6 class="slim-pagetitle">
-    {{ @$page_title }}
-</h6>
+@extends('layouts.app')
+@section('page_title')
+    تعديل المدينة
 @endsection
+
 @section('content')
-<div class="section-wrapper">
-    <div class="form-layout form-layout-4">
-        {!! Form::model($row,['method' => 'post','files' => true] ) !!} {{ csrf_field() }} {{method_field('put')}}
-        @include($module.'.form',$row)
-        <!-- custom-file -->
-        <div class="form-layout-footer mg-t-30">
-            <button class="btn btn-primary bd-0">{{ trans('app.Save') }}</button>
+
+
+    <section class="content">
+
+        <div class="box">
+
+            <div class="box-header with-border">
+
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                            title="Collapse">
+                        <i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fa fa-times"></i></button>
+                </div>
+            </div>
+            <div class="box-body">
+                {!! Form::model($model,[
+                'action' => ['CityController@update',$model->id],
+                'method' => 'put'
+                ]) !!}
+                @include('flash::message')
+                @include('partials.validation_errors')
+                <div class="form-group">
+                    <label for="name">الإسم</label>
+                    {!! Form::text('name',null,[
+                    'class' => 'form-control'
+                 ]) !!}
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">تعديل</button>
+                </div>
+
+                {!! Form::close () !!}
+            </div>
+
         </div>
-        {!! Form::close() !!}
-        <!-- form-layout-footer -->
-    </div>
-    <!-- form-layout -->
-</div>
+    </section>
 @endsection
