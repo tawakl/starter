@@ -64,7 +64,9 @@ class Kernel extends HttpKernel
         'localizationRedirect' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
         'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
         'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
-        'isSuperAdmin' => \App\Starter\Users\Middleware\IsSuperAdmin::class
+        'isSuperAdmin' => \App\Starter\Users\Middleware\IsSuperAdmin::class,
+         'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
+         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
     ];
 
     /**
