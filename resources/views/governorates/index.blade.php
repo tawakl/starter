@@ -65,5 +65,7 @@
         @endif
 
         <br>
+            {{ $records->links() }}
+
     </div>
 @endsection

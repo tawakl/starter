@@ -5,7 +5,7 @@
     </a>
 </li>
 
-@if(can('create-users') || can('view-users'))
+@if(@auth()->user()->type == App\Starter\Users\UserEnums::SUPER_ADMIN_TYPE)
 
     <li class="nav-item {{(request()->is('*/users*'))?"active":""}}">
         <a class="nav-link" href="{{ route('users') }}">
@@ -14,7 +14,6 @@
         </a>
     </li>
 
-@endif
 
 <li class="nav-item with-sub settings {{(request()->is('*/cities*'))?"active":""}}">
     <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
@@ -34,7 +33,6 @@
     </div><!-- dropdown-menu -->
 </li>
 {{-- only super admin can access configuration settings --}}
-@if(@auth()->user()->type == App\Starter\Users\UserEnums::SUPER_ADMIN_TYPE)
     <li class="nav-item with-sub settings {{(request()->is('*/configs*' ,'*/roles*'))?"active":""}}">
         <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
             <i class="icon ion-ios-gear-outline"></i>

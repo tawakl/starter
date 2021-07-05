@@ -29,7 +29,6 @@
         <!-- form-group -->
         <button class="btn btn-primary btn-block btn-signin">{{ trans('auth.Submit') }}</button>
         <p class="mg-b-0">{{trans('auth.Forgot your password')}} ? <a href="auth/forgot-password">{{ trans('auth.Forgot password') }}</a></p>
-        <p class="mg-b-0">{{trans('auth.register')}} ? <a href="auth/register">{{ trans('auth.register') }}</a></p>
         {!! Form::close() !!}
     </div>
 </div>

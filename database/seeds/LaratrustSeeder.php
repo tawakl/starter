@@ -68,40 +68,40 @@ class LaratrustSeeder extends Seeder
         }
 
         // Creating user with permissions
-        if (!empty($userPermission)) {
-            foreach ($userPermission as $key => $modules) {
-                foreach ($modules as $module => $value) {
-
-                    // Create default user for each permission set
-                    $user = \App\Starter\Users\User::create([
-                        'name' => ucwords(str_replace('_', ' ', $key)),
-                        'email' => $key.rand(111, 999).'@'.$role->name.'.com',
-                        'password' => 'password',
-                        'remember_token' => str_random(10),
-                        'type' => $role->name,
-                        'governorate' => 'الغربيه',
-                        'city' => 'سمنود',
-                        'mobile_number' => '01001199'.rand(111, 999),
-                    ]);
-                    $permissions = [];
-
-                    foreach (explode(',', $value) as $p => $perm) {
-                        $permissionValue = $mapPermission->get($perm);
-
-                        $permissions[] = \App\Starter\Users\Models\Permission::firstOrCreate([
-                            'name' => $permissionValue . '-' . $module,
-                            'display_name' => ucfirst($permissionValue) . ' ' . ucfirst($module),
-                            'description' => ucfirst($permissionValue) . ' ' . ucfirst($module),
-                        ])->id;
-
-                        $this->command->info('Creating Permission to '.$permissionValue.' for '. $module);
-                    }
-                }
-
-                // Attach all permissions to the user
-                $user->permissions()->sync($permissions);
-            }
-        }
+//        if (!empty($userPermission)) {
+//            foreach ($userPermission as $key => $modules) {
+//                foreach ($modules as $module => $value) {
+//
+//                    // Create default user for each permission set
+//                    $user = \App\Starter\Users\User::create([
+//                        'name' => ucwords(str_replace('_', ' ', $key)),
+//                        'email' => $key.rand(111, 999).'@'.$role->name.'.com',
+//                        'password' => 'password',
+//                        'remember_token' => str_random(10),
+//                        'type' => $role->name,
+//                        'governorate' => 'الزربيه',
+//                        'city' => 'سمنود',
+//                        'mobile_number' => '01001199'.rand(111, 999),
+//                    ]);
+//                    $permissions = [];
+//
+//                    foreach (explode(',', $value) as $p => $perm) {
+//                        $permissionValue = $mapPermission->get($perm);
+//
+//                        $permissions[] = \App\Starter\Users\Models\Permission::firstOrCreate([
+//                            'name' => $permissionValue . '-' . $module,
+//                            'display_name' => ucfirst($permissionValue) . ' ' . ucfirst($module),
+//                            'description' => ucfirst($permissionValue) . ' ' . ucfirst($module),
+//                        ])->id;
+//
+//                        $this->command->info('Creating Permission to '.$permissionValue.' for '. $module);
+//                    }
+//                }
+//
+//                // Attach all permissions to the user
+//                $user->permissions()->sync($permissions);
+//            }
+//        }
     }
 
     /**

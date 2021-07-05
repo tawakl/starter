@@ -29,7 +29,7 @@ class GovernorateController extends Controller
         $data['module'] = $this->module;
 
         $data['page_title'] = trans('app.List Governorates');
-        $data['records'] = $this->model->paginate();
+        $data['records'] = $this->model->paginate(10);
 
         return view($this->module . '.index', $data);
     }

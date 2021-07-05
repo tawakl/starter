@@ -70,8 +70,8 @@ class AuthController extends Controller
             if (request()->has('to')) {
                 return redirect(request('to'));
             }
-            $row->last_ip=request()->ip();
-            $row->last_logged_in_at=date('Y-m-d H:i:s');
+//            $row->last_ip=request()->ip();
+//            $row->last_logged_in_at=date('Y-m-d H:i:s');
             $row->save();
 
             LaravelLocalization::setLocale($row->language ?? config('app.locale'));
