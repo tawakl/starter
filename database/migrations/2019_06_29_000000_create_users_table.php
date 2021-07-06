@@ -26,11 +26,8 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable(); //required
             $table->rememberToken();
             $table->string('confirm_token', 190)->nullable();
-            $table->boolean('is_admin')->nullable()->default(0)->index();
-            $table->boolean('is_active')->nullable()->default(1)->index();
             $table->string('profile_picture', 190)->nullable();
-            $table->string('language', 190)->nullable();
-            $table->bigInteger('created_by')->nullable()->index();
+            $table->date('birth_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

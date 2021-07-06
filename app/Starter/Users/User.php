@@ -16,7 +16,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use SoftDeletes, Searchable, LaratrustUserTrait, CreatedBy, HasAttach, Notifiable;
+    use SoftDeletes, Searchable, LaratrustUserTrait, HasAttach, Notifiable;
 
     protected static $attachFields = [
         'profile_picture' => [
@@ -30,13 +30,12 @@ class User extends Authenticatable implements JWTSubject
         'type',
         'email',
         'mobile_number',
-        'is_admin',
         'password',
         'is_active',
         'profile_picture',
-        'language',
         'governorate',
-        'city'
+        'city',
+        'birth_date'
     ];
 
     public function setPasswordAttribute($value)

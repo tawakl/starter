@@ -33,22 +33,22 @@
     </div><!-- dropdown-menu -->
 </li>
 {{-- only super admin can access configuration settings --}}
-    <li class="nav-item with-sub settings {{(request()->is('*/configs*' ,'*/roles*'))?"active":""}}">
-        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
-            <i class="icon ion-ios-gear-outline"></i>
-            <span>{{trans('navigation.Settings')}}</span>
-        </a>
-        <div class="sub-item">
-            <ul>
-                <li class="{{(request()->is('*/configs*'))?"active":""}}">
-                    <a href="/configs/edit">{{trans('navigation.Configurations')}}</a>
-                </li>
+{{--    <li class="nav-item with-sub settings {{(request()->is('*/configs*' ,'*/roles*'))?"active":""}}">--}}
+{{--        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">--}}
+{{--            <i class="icon ion-ios-gear-outline"></i>--}}
+{{--            <span>{{trans('navigation.Settings')}}</span>--}}
+{{--        </a>--}}
+{{--        <div class="sub-item">--}}
+{{--            <ul>--}}
+{{--                <li class="{{(request()->is('*/configs*'))?"active":""}}">--}}
+{{--                    <a href="/configs/edit">{{trans('navigation.Configurations')}}</a>--}}
+{{--                </li>--}}
 
-                <li class="{{(request()->is('*/roles*'))?"active":""}}">
-                    <a href="/roles">{{trans('navigation.Roles')}}</a>
-                </li>
-            </ul>
-        </div><!-- dropdown-menu -->
-    </li>
+{{--                <li class="{{(request()->is('*/roles*'))?"active":""}}">--}}
+{{--                    <a href="/roles">{{trans('navigation.Roles')}}</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </div><!-- dropdown-menu -->--}}
+{{--    </li>--}}
 @endif
 

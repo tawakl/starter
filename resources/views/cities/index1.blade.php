@@ -2,11 +2,11 @@
 @section('title')
     <h6 class="slim-pagetitle">
         {{ @$page_title }}
-{{--        @if(can('create-'.$module))--}}
-{{--            <a href="{{$module}}/create" class="btn btn-success">--}}
-{{--                <i class="fa fa-plus"></i> {{trans('app.Create')}}--}}
-{{--            </a>--}}
-{{--        @endif--}}
+        @if(can('create-'.$module))
+            <a href="{{$module}}/create" class="btn btn-success">
+                <i class="fa fa-plus"></i> {{trans('app.Create')}}
+            </a>
+        @endif
     </h6>
 @endsection
 @section('content')
@@ -35,7 +35,7 @@
 
 
                                 <td class="center">{{$record->name}}</td>
-                                <td class="center">المحافظه</td>
+                                <td class="center">{{$record->governorate->name}}</td>
                                 <td class="center">
 
                                     @if(request('deleted') != 'yes')

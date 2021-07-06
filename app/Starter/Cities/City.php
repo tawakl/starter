@@ -13,11 +13,11 @@ class City extends Model
 
     public function users()
     {
-        return $this->hasMany('App\Starter\users\user');
+        return $this->hasMany('App\Starter\Users\user');
     }
 
-//    public function governorate()
-//    {
-//        return $this->belongsTo('App\Starter\City');
-//    }
+    public function governorate()
+    {
+        return $this->belongsTo('App\Starter\Governorates\Governorate');
+    }
 }

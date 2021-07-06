@@ -2,11 +2,11 @@
 @section('title')
 <h6 class="slim-pagetitle">
     {{ @$page_title }}
-    @if(can('create-'.$module))
-    <a href="{{$module}}/create" class="btn btn-success">
-        <i class="fa fa-plus"></i> {{trans('app.Create')}}
-    </a>
-    @endif
+{{--    @if(can('create-'.$module))--}}
+{{--    <a href="{{$module}}/create" class="btn btn-success">--}}
+{{--        <i class="fa fa-plus"></i> {{trans('app.Create')}}--}}
+{{--    </a>--}}
+{{--    @endif--}}
 </h6>
 @endsection
 @section('content')
@@ -42,9 +42,6 @@
                             <i class="fa fa-eye"></i>
                         </a>
                         @if(request('deleted') != 'yes')
-                            <a class="btn btn-success btn-xs" href="{{$module}}/edit/{{$row->id}}" title="{{trans('users.Edit')}}">
-                                <i class="fa fa-edit"></i>
-                            </a>
                             @if(can('delete-'.$module))
                                 <form class="d-inline" method="POST" action="{{route('users.delete' , $row->id)}}">
                                     {{ csrf_field() }}
