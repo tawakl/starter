@@ -58,10 +58,10 @@ class AuthController extends Controller
             flash()->error(trans('auth.There is no account with this mobile number'));
             return back()->withInput();
         }
-        if (!$row->is_active) {
-            flash()->error(trans('auth.This account is banned'));
-            return back()->withInput();
-        }
+//        if (!$row->is_active) {
+//            flash()->error(trans('auth.This account is banned'));
+//            return back()->withInput();
+//        }
         if (!Hash::check(trim(request('password')), $row->password)) {
             flash()->error(trans('auth.Trying to login with invalid password'));
             return back()->withInput();
@@ -100,14 +100,14 @@ class AuthController extends Controller
             flash()->error(trans('auth.There is no account with this email'));
             return back()->withInput();
         }
-        if (!$row->confirmed) {
-            flash()->error(trans('auth.This account is not confirmed'));
-            return back()->withInput();
-        }
-        if (!$row->is_active) {
-            flash()->error(trans('auth.This account is banned'));
-            return back()->withInput();
-        }
+//        if (!$row->confirmed) {
+//            flash()->error(trans('auth.This account is not confirmed'));
+//            return back()->withInput();
+//        }
+//        if (!$row->is_active) {
+//            flash()->error(trans('auth.This account is banned'));
+//            return back()->withInput();
+//        }
         $password=strtolower(str_random(8));
         if ($row->update(['password'=>$password])) {
             \App\Jobs\SendForgotEMail::dispatch($row, $password);
