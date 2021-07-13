@@ -21,9 +21,9 @@
                         <tr>
                             <th class="">{{trans('Governorates.ID')}} </th>
 
-                            <th class="">{{trans('Governorates.المحافظة')}} </th>
+                            <th class="">{{trans('Governorates.governorate')}} </th>
 
-                            <th class="">actions</th>
+                            <th class="">{{trans('Governorates.actions')}}</th>
                         </tr>
                         </thead>
                         <tbody>

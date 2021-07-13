@@ -1,13 +1,13 @@
 @extends('layouts.master')
 @section('title')
-    <h6 class="slim-pagetitle">
-        {{ @$page_title }}
-        @if(can('create-'.$module))
-            <a href="{{$module}}/create" class="btn btn-success">
-                <i class="fa fa-plus"></i> {{trans('app.Create')}}
-            </a>
-        @endif
-    </h6>
+{{--    <h6 class="slim-pagetitle">--}}
+{{--        {{ @$page_title }}--}}
+{{--        @if(can('create-'.$module))--}}
+{{--            <a href="{{$module}}/create" class="btn btn-success">--}}
+{{--                <i class="fa fa-plus"></i> {{trans('app.Create')}}--}}
+{{--            </a>--}}
+{{--        @endif--}}
+{{--    </h6>--}}
 @endsection
 @section('content')
     <div class="section-wrapper">
@@ -21,10 +21,10 @@
                         <tr>
                             <th class="">{{trans('cities.ID')}} </th>
 
-                            <th class="">{{trans('users.المدينة')}} </th>
-                            <th class="">{{trans('users.المحافظة')}} </th>
+                            <th class="">{{trans('cities.city')}} </th>
+                            <th class="">{{trans('cities.governorate')}} </th>
 
-                            <th class="">actions</th>
+                            <th class="">{{trans('cities.actions')}}</th>
                         </tr>
                         </thead>
                         <tbody>

@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'There is no results' => 'لا توجد نتائج',
+    'Role' => 'Role',
+    'Vendor' => 'Vendor',
+    'Name' => 'الاسم',
+    'Email' => 'الايميل',
+    'Address' => 'العنوان',
+    'Mobile' => 'Mobile',
+    'Mobile two' => 'Mobile 2',
+    'ID' => 'ID',
+    'Default language' => 'Default language',
+    'Password' => 'كلمه السر',
+    'Password confirmation' => 'تاكيد كلمه السر',
+    'Image' => 'Image',
+    'birth date' => 'Bتاريخ الميلاد',
+    'address' => 'Address',
+    'Created at' => 'وقت الانشاء',
+    'hiring date' => 'Hiring date',
+    'Edit' => 'تعديل',
+    'View' => 'عرض',
+    'Delete' => 'حذف',
+    'Are you sure you want to delete this item' => 'Are you sure you want to delete this item',
+    'Language' => 'Language',
+    'Created by' => 'Created by',
+    'Type' => 'Type',
+    'password' => 'كلمه السر',
+    'password_confirmation' => 'تاكيد كلمه الس',
+    'First name' => 'الاسم الاول',
+    'Last name' => 'الاسم الاخير',
+
+];
