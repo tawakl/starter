@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('governorate')->index();
             $table->string('city')->index();
             $table->string('result')->nullable();
-            $table->string('email')->nullable()->index()->unique();
+            $table->string('email')->nullable()->index();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('mobile_number')->index()->nullable()->unique(); //required
+            $table->string('mobile_number')->index()->nullable(); //required
             $table->string('password')->nullable(); //required
             $table->rememberToken();
             $table->string('confirm_token', 190)->nullable();

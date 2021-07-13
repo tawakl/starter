@@ -37,6 +37,8 @@ class AuthApiController extends BaseApiController
         $user->password = $request->password;
         $user->governorate = $request->governorate;
         $user->city = $request->city;
+        $user->mobile_number = $request->mobile_number;
+        $user->birth_date = $request->birth_date;
         $user->save();
         $user = User::first();
         $token = JWTAuth::fromUser($user);

@@ -73,12 +73,11 @@ class User extends Authenticatable implements JWTSubject
     public function getData()
     {
         $query = $this->withoutLoggedUser()
-            ->notsuperadmin()
             ->when(request('type'), function ($q) {
                 return $q->where('type', request('type'));
             })
-            ->when(request('deleted') == 'yes', function ($q) {
-                return $q->onlyTrashed();
+            ->when(request('mobile_number'), function ($q) {
+             return $q->where('mobile_number', request('mobile_number'));
             });
         return $query;
     }

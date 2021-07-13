@@ -2548,17 +2548,17 @@
     },
     {
         "name": "lcobucci/jwt",
-        "version": "3.4.5",
-        "version_normalized": "3.4.5.0",
+        "version": "3.3.3",
+        "version_normalized": "3.3.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/lcobucci/jwt.git",
-            "reference": "511629a54465e89a31d3d7e4cf0935feab8b14c1"
+            "reference": "c1123697f6a2ec29162b82f170dd4a491f524773"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/lcobucci/jwt/zipball/511629a54465e89a31d3d7e4cf0935feab8b14c1",
-            "reference": "511629a54465e89a31d3d7e4cf0935feab8b14c1",
+            "url": "https://api.github.com/repos/lcobucci/jwt/zipball/c1123697f6a2ec29162b82f170dd4a491f524773",
+            "reference": "c1123697f6a2ec29162b82f170dd4a491f524773",
             "shasum": ""
         },
         "require": {
@@ -2573,10 +2573,7 @@
             "phpunit/phpunit": "^5.7 || ^7.3",
             "squizlabs/php_codesniffer": "~2.3"
         },
-        "suggest": {
-            "lcobucci/clock": "*"
-        },
-        "time": "2021-02-16T09:40:01+00:00",
+        "time": "2020-08-20T13:22:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2587,12 +2584,7 @@
         "autoload": {
             "psr-4": {
                 "Lcobucci\\JWT\\": "src"
-            },
-            "files": [
-                "compat/class-aliases.php",
-                "compat/json-exception-polyfill.php",
-                "compat/lcobucci-clock-polyfill.php"
-            ]
+            }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
@@ -2835,17 +2827,17 @@
     },
     {
         "name": "league/oauth1-client",
-        "version": "v1.9.0",
-        "version_normalized": "1.9.0.0",
+        "version": "v1.9.1",
+        "version_normalized": "1.9.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/thephpleague/oauth1-client.git",
-            "reference": "1e7e6be2dc543bf466236fb171e5b20e1b06aee6"
+            "reference": "19a3ce488bb1547c906209e8293199ec34eaa5b1"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/1e7e6be2dc543bf466236fb171e5b20e1b06aee6",
-            "reference": "1e7e6be2dc543bf466236fb171e5b20e1b06aee6",
+            "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/19a3ce488bb1547c906209e8293199ec34eaa5b1",
+            "reference": "19a3ce488bb1547c906209e8293199ec34eaa5b1",
             "shasum": ""
         },
         "require": {
@@ -2864,7 +2856,7 @@
         "suggest": {
             "ext-simplexml": "For decoding XML-based responses."
         },
-        "time": "2021-01-20T01:40:53+00:00",
+        "time": "2021-07-07T22:54:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2908,17 +2900,17 @@
     },
     {
         "name": "maatwebsite/excel",
-        "version": "3.1.31",
-        "version_normalized": "3.1.31.0",
+        "version": "3.1.32",
+        "version_normalized": "3.1.32.0",
         "source": {
             "type": "git",
             "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-            "reference": "cbe6370af70f93bd017f77ef92d32bd492a47fcb"
+            "reference": "9dc29b63a77fb7f2f514ef754af3a1b57e83cadf"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/cbe6370af70f93bd017f77ef92d32bd492a47fcb",
-            "reference": "cbe6370af70f93bd017f77ef92d32bd492a47fcb",
+            "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/9dc29b63a77fb7f2f514ef754af3a1b57e83cadf",
+            "reference": "9dc29b63a77fb7f2f514ef754af3a1b57e83cadf",
             "shasum": ""
         },
         "require": {
@@ -2931,7 +2923,7 @@
             "orchestra/testbench": "^6.0",
             "predis/predis": "^1.1"
         },
-        "time": "2021-06-02T17:31:29+00:00",
+        "time": "2021-07-08T10:11:21+00:00",
         "type": "library",
         "extra": {
             "laravel": {
@@ -4052,17 +4044,17 @@
     },
     {
         "name": "myclabs/php-enum",
-        "version": "1.8.1",
-        "version_normalized": "1.8.1.0",
+        "version": "1.8.3",
+        "version_normalized": "1.8.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/myclabs/php-enum.git",
-            "reference": "55555d31a622b4bc9662664132a0533ae6ef47b1"
+            "reference": "b942d263c641ddb5190929ff840c68f78713e937"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/myclabs/php-enum/zipball/55555d31a622b4bc9662664132a0533ae6ef47b1",
-            "reference": "55555d31a622b4bc9662664132a0533ae6ef47b1",
+            "url": "https://api.github.com/repos/myclabs/php-enum/zipball/b942d263c641ddb5190929ff840c68f78713e937",
+            "reference": "b942d263c641ddb5190929ff840c68f78713e937",
             "shasum": ""
         },
         "require": {
@@ -4074,7 +4066,7 @@
             "squizlabs/php_codesniffer": "1.*",
             "vimeo/psalm": "^4.6.2"
         },
-        "time": "2021-06-29T09:20:05+00:00",
+        "time": "2021-07-05T08:18:36+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -9824,17 +9816,17 @@
     },
     {
         "name": "tymon/jwt-auth",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
         "source": {
             "type": "git",
             "url": "https://github.com/tymondesigns/jwt-auth.git",
-            "reference": "b927137cd5bd4d2f5d48a1ca71bc85006b99dbae"
+            "reference": "e588cb719539366c0e2f6017f975379cb73e9680"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/b927137cd5bd4d2f5d48a1ca71bc85006b99dbae",
-            "reference": "b927137cd5bd4d2f5d48a1ca71bc85006b99dbae",
+            "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/e588cb719539366c0e2f6017f975379cb73e9680",
+            "reference": "e588cb719539366c0e2f6017f975379cb73e9680",
             "shasum": ""
         },
         "require": {
@@ -9842,7 +9834,7 @@
             "illuminate/contracts": "^5.2|^6|^7|^8",
             "illuminate/http": "^5.2|^6|^7|^8",
             "illuminate/support": "^5.2|^6|^7|^8",
-            "lcobucci/jwt": "^3.2",
+            "lcobucci/jwt": "<3.4",
             "namshi/jose": "^7.0",
             "nesbot/carbon": "^1.0|^2.0",
             "php": "^5.5.9|^7.0"
@@ -9854,7 +9846,7 @@
             "mockery/mockery": ">=0.9.9",
             "phpunit/phpunit": "~4.8|~6.0"
         },
-        "time": "2020-09-08T12:29:20+00:00",
+        "time": "2020-11-27T12:32:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

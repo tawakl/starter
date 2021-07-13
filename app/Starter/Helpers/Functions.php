@@ -31,7 +31,7 @@ function getConfigs()
 function appName()
 {
     $configs = getConfigs();
-    $appName = (@$configs['application_name'][lang()]) ?: env('APP_NAME');
+    $appName = trans('app.questions-system') ?: env('APP_NAME');
     return $appName;
 }
 

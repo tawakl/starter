@@ -26,7 +26,7 @@ class UsersController extends Controller
         $data['module'] = $this->module;
 
         $data['page_title'] = trans('app.List Users');
-        $data['rows'] = $this->model->paginate(12);
+        $data['rows'] = $this->model->getData()->paginate(12);
 
         $data['rows']->appends(request(['type', 'deleted']));
         return view($this->module . '.index', $data);

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Dashboard' => 'الرئيسيه',
+    'Dashboard' => 'لوحه التحكم',
     'Users' => 'المستخدمين',
     'Cities' => 'المدن',
     'Governorates' => 'المحافظات',

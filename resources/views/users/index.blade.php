@@ -12,7 +12,36 @@
 @section('content')
 <div class="section-wrapper">
     @if(can('view-'.$module))
+        @component('partials/components/searchBox')
 
+            @slot('header')
+                {{ trans('users.Filter users') }}
+            @endslot
+
+            @if(request('type'))
+                <input type="hidden" name="type" value="{{ request('type') ?? '' }}">
+            @endif
+
+            @include('form.input',[
+                'name'=>'mobile_number',
+                'type'=>'text',
+                'value' => request('mobile_number'),
+                'attributes'=>[
+                    'class'=>'form-control',
+                    'label'=>trans('app.mobile_number'),
+                    ]
+                ]
+            )
+
+            @slot('url')
+                @if(request('type'))
+                    {{ route('users', request()->only('type')) }}
+                @else
+                    {{ route('users') }}
+                @endif
+            @endslot
+
+        @endcomponent
 
     @if (!$rows->isEmpty())
     <div class="table-responsive">
