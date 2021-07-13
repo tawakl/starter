@@ -23,5 +23,6 @@ return [
     'Governorate' => 'المحافظه',
     'Result' => 'النتيجه',
     'Mobile' => 'رقم الهاتف',
+    'Filter users' => 'تصفيه المستخدمين',
 
 ];

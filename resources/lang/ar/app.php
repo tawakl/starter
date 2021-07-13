@@ -56,4 +56,5 @@ return [
     'List Users' => 'قائمه المستخدمين',
     'List Cities' => 'قائمه المدن',
     'List Governorates' => 'قائمه المحافظات',
+    'mobile_number' => 'رقم الهاتف',
 ];

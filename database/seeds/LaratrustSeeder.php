@@ -56,11 +56,11 @@ class LaratrustSeeder extends Seeder
             $user = \App\Starter\Users\User::create([
                 'name' => ucwords(str_replace('_', ' ', $key)),
                 'email' => $key.rand(111, 999).'@'.$role->name.'.com',
-                'password' => 'password',
+                'password' => '123456789',
                 'governorate' => 'الغربيه',
                 'city' => 'سمنود',
                 'type' => $role->name,
-                'mobile_number' => '0100008954'.rand(1, 9),
+                'mobile_number' => '0123456789',
             ]);
 
 

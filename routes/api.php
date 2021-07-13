@@ -22,3 +22,7 @@ Route::post('login', '\App\Starter\Users\Controllers\Api\AuthApiController@login
 Route::get('logout', '\App\Starter\Users\Controllers\Api\AuthApiController@logout');
 Route::get('user', '\App\Starter\Users\Controllers\Api\AuthApiController@getAuthUser');
 
+
+    require base_path('app/Starter/Cities/Routes/api.php');
+    require base_path('app/Starter/Governorates/Routes/api.php');
+
