@@ -24,39 +24,14 @@
                             <th class="">{{trans('cities.city')}} </th>
                             <th class="">{{trans('cities.governorate')}} </th>
 
-                            <th class="">{{trans('cities.actions')}}</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach ($records as $record)
                             <tr>
                                 <td class="center">{{$record->id}}</td>
-
-
-
                                 <td class="center">{{$record->name}}</td>
                                 <td class="center">{{$record->governorate->name}}</td>
-                                <td class="center">
-
-                                    @if(request('deleted') != 'yes')
-                                        <a class="btn btn-success btn-xs" href="" title="{{trans('users.Edit')}}">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-
-                                        @if(can('delete-'.$module))
-                                            <form class="d-inline" method="POST" action="{{route('cities.delete' , $record->id)}}">
-                                                {{ csrf_field() }}
-                                                {{ method_field('DELETE') }}
-                                                <button type="submit" class="btn btn-danger btn-xs" value="Delete Station"
-                                                        data-confirm="{{trans('users.Are you sure you want to delete this item')}}?">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        @endif
-
-                                    @endif
-
-                                </td>
                             </tr>
                         @endforeach
                         </tbody>

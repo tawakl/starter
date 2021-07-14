@@ -1,9 +1,9 @@
-<li class="nav-item {{(request()->getRequestUri() == "/".lang())?"active":""}}">
-    <a class="nav-link" href="{{app()->make("url")->to('/')}}/">
-        <i class="icon ion-ios-pie-outline"></i>
-        <span>{{trans('navigation.Dashboard')}}</span>
-    </a>
-</li>
+{{--<li class="nav-item {{(request()->getRequestUri() == "/".lang())?"active":""}}">--}}
+{{--    <a class="nav-link" href="{{app()->make("url")->to('/')}}/">--}}
+{{--        <i class="icon ion-ios-pie-outline"></i>--}}
+{{--        <span>{{trans('navigation.Dashboard')}}</span>--}}
+{{--    </a>--}}
+{{--</li>--}}
 
 @if(@auth()->user()->type == App\Starter\Users\UserEnums::SUPER_ADMIN_TYPE)
 
@@ -32,6 +32,19 @@
         </ul>
     </div><!-- dropdown-menu -->
 </li>
+    
+    <li class="nav-item {{(request()->is('*/ContactUs*'))?"active":""}}">
+        <a class="nav-link" href="{{ route('ContactUs') }}">
+            <i class="icon ion-android-people"></i>
+            <span>{{trans('navigation.Contact')}}</span>
+        </a>
+    </li>
+    <li class="nav-item {{(request()->is('*/policies*'))?"active":""}}">
+        <a class="nav-link" href="{{ route('policies') }}">
+            <i class="icon ion-android-people"></i>
+            <span>{{trans('navigation.policy')}}</span>
+        </a>
+    </li>
 {{-- only super admin can access configuration settings --}}
 {{--    <li class="nav-item with-sub settings {{(request()->is('*/configs*' ,'*/roles*'))?"active":""}}">--}}
 {{--        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">--}}

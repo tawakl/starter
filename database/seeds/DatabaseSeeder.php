@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(BasicSeeder::class);
         $this->call(GovernorateSeeder::class);
         $this->call(CitySeeder::class);
+        $this->call(PolicySeeder::class);
     }
 }

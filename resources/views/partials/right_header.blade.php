@@ -41,10 +41,10 @@
 <!-- dropdown -->
 @endif
 
-@include('partials.langSwitch')
+{{--@include('partials.langSwitch')--}}
 <div class="dropdown dropdown-c">
     <a href="#" class="logged-user" data-toggle="dropdown">
-        {!! viewImage(auth()->user()->profile_picture,'small') !!}
+{{--        {!! viewImage(auth()->user()->profile_picture,'small') !!}--}}
         <span>{{ auth()->user()->name }}</span>
         <i class="fa fa-angle-down"></i>
     </a>
