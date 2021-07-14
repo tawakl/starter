@@ -93,14 +93,14 @@ class UsersController extends Controller
         return view($this->module . '.view', $data);
     }
 
-    public function getDelete($id)
-    {
-        authorize('delete-' . $this->module);
-        $row = $this->model->findOrFail($id);
-        $row->delete();
-        flash()->success(trans('app.Deleted Successfully'));
-        return back();
-    }
+        public function getDelete($id)
+        {
+            authorize('delete-' . $this->module);
+            $row = $this->model->findOrFail($id);
+            $row->delete();
+            flash()->success(trans('app.Deleted Successfully'));
+            return back();
+        }
 
     public function getExport()
     {

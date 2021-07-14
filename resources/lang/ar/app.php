@@ -57,4 +57,11 @@ return [
     'List Cities' => 'قائمه المدن',
     'List Governorates' => 'قائمه المحافظات',
     'mobile_number' => 'رقم الهاتف',
+    'Mobile' => 'رقم الهاتف',
+    'contact_us' => 'تواصل معنا',
+    'name' => 'الاسم',
+    'description' => 'الرساله',
+    'Policy' => 'سياسه الاستخدام',
+    'Actions' => ' الاوامر',
+    'Deleted' => ' المحذوف',
 ];

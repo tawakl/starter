@@ -2,6 +2,7 @@
 <html lang="{{ LaravelLocalization::getCurrentLocale() }}" dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
     <head>
+
         @include('partials.meta')
         @include('partials.css') @stack('css')
     </head>

@@ -1,6 +1,5 @@
 <?php
-
 Route::group(['prefix' => 'ContactUs'], function () {
-    Route::get('/', '\App\Starter\ContactUs\Controllers\api\ContactUsController@index')->name('ContactUs');
+    Route::post('/create', '\App\Starter\ContactUs\Controllers\api\ContactUsController@store')->name('ContactUs');
 
 });

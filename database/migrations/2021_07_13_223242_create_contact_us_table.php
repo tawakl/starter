@@ -19,6 +19,7 @@ class CreateContactUsTable extends Migration
             $table->string('mobile_number')->index()->nullable(); //required
             $table->longText('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

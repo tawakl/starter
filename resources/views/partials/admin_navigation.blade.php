@@ -40,7 +40,7 @@
         </a>
     </li>
     <li class="nav-item {{(request()->is('*/policies*'))?"active":""}}">
-        <a class="nav-link" href="{{ route('policies') }}">
+        <a class="nav-link" href="{{ route('Policy.get.edit') }}">
             <i class="icon ion-android-people"></i>
             <span>{{trans('navigation.policy')}}</span>
         </a>
