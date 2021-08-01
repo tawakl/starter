@@ -7,6 +7,9 @@
 {{--        <i class="fa fa-plus"></i> {{trans('app.Create')}}--}}
 {{--    </a>--}}
 {{--    @endif--}}
+    <a href="{{$module}}/export?{{@$_SERVER['QUERY_STRING']}}" class="btn btn-primary">
+        <i class="fa fa-arrow-down"></i> {{trans('app.Export')}}
+    </a>
 </h6>
 @endsection
 @section('content')
@@ -63,11 +66,11 @@
                     <td class="center">{{$row->id}}</td>
                     <td class="center">{{$row->name}}</td>
                     <td class="center">{{$row->email}}</td>
-                    <td class="center">{{$row->mobile_number}}</td>
+                    <td class="center">  <a href="{{$module}}/view/{{$row->mobile_number}}" >{{$row->mobile_number}}</a></td>
                     <td class="center">{{$row->governorate}}</td>
                     <td class="center"></td>
                     <td class="center">
-                        <a class="btn btn-primary btn-xs" href="{{$module}}/view/{{$row->id}}" title="{{trans('users.View')}}">
+                        <a class="btn btn-primary btn-xs" href="{{$module}}/view/{{$row->mobile_number}}" title="{{trans('users.View')}}">
                             <i class="fa fa-eye"></i>
                         </a>
                         @if(request('deleted') != 'yes')

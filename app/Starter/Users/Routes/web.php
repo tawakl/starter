@@ -10,7 +10,7 @@ Route::group(['prefix' => 'users'], function () {
     Route::put('/edit/{id}', '\App\Starter\Users\Controllers\UsersController@postEdit')
         ->name('users.putUser');
 
-    Route::get('/view/{id}', '\App\Starter\Users\Controllers\UsersController@getView')
+    Route::get('/view/{phone}', '\App\Starter\Users\Controllers\UsersController@getView')
         ->name('users.view');
 
     Route::delete('/delete/{id}', '\App\Starter\Users\Controllers\UsersController@getDelete')

@@ -2,12 +2,15 @@
 
 namespace App\Starter\Users\Controllers;
 
+use App\Exports\UsersExport;
 use App\Starter\Cars\Car;
 use App\Starter\Users\Requests\CreateUserRequest;
 use App\Starter\Users\Requests\UpdateUserRequest;
 use App\Starter\Users\User;
 use App\Starter\Users\UserEnums;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class UsersController extends Controller
 {
@@ -83,13 +86,13 @@ class UsersController extends Controller
         return redirect('/' . $this->module);
     }
 
-    public function getView($id)
+    public function getView($phone)
     {
         authorize('view-' . $this->module);
         $data['module'] = $this->module;
         $data['page_title'] = trans('app.View') . " " . $this->title;
         $data['breadcrumb'] = [$this->title => $this->module.'?'.request()->getQueryString()];
-        $data['row'] = $this->model->findOrFail($id);
+        $data['rows'] = $this->model->where('mobile_number',$phone)->get();
         return view($this->module . '.view', $data);
     }
 
@@ -104,12 +107,7 @@ class UsersController extends Controller
 
     public function getExport()
     {
-        authorize('view-' . $this->module);
-        $rows = $this->model->getData()->get();
-        if ($rows->isEmpty()) {
-            flash()->error(trans('app.There is no results to export'));
-            return back();
-        }
-        $this->model->export($rows, $this->module);
+        return Excel::download(new UsersExport, 'users.xlsx');
+
     }
 }
