@@ -19,6 +19,14 @@ class PolicyController extends Controller
         $this->title = trans('app.Policy');
         $this->model = $model;
     }
+    public function index()
+    {
+        $data['module'] = $this->module;
+
+        $data['page_title'] = trans('app.Policy');
+        $data['row'] = $this->model->get();
+        return view($this->module . '.edit', $data);
+    }
 
     public function getEdit() {
         $data['row']=$this->model->findOrFail(auth()->user()->id);

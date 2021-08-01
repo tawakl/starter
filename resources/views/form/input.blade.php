@@ -5,7 +5,7 @@
         @php
             $attributes['autocomplete']='off';
             if($type == "textarea"){
-                $attributes['class'] .= ' summernote';
+                $attributes['class'] .= ' ckeditor';
                         }
         @endphp
         {!! Form::$type($name,(@$row->$name)?:(@$value),$attributes)!!}
