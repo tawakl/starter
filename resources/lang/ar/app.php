@@ -2,7 +2,7 @@
 
 return [
     'Save' => 'حفظ',
-    'questions-system' => 'Questions System',
+    'questions-system' => 'مركز نماء',
     'Create' => 'انشاء',
     'Cancel' => 'الغاء',
     'Export' => 'تصدير',
@@ -64,4 +64,6 @@ return [
     'Policy' => 'سياسه الاستخدام',
     'Actions' => ' الاوامر',
     'Deleted' => ' المحذوف',
+    'Logout' => ' تسجيل الخروج',
+    'Edit account' => ' تعديل الصفحه الشخصيه',
 ];
