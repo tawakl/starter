@@ -76,7 +76,7 @@ class AuthController extends Controller
 
             LaravelLocalization::setLocale($row->language ?? config('app.locale'));
             flash()->success(trans('auth.Welcome to your dashboard'));
-            return redirect()->intended('/');
+            return redirect()->intended('/users');
         }
         flash()->error(trans('auth.Failed to login'));
         return back();

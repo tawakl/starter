@@ -65,5 +65,5 @@ return [
     'Actions' => ' الاوامر',
     'Deleted' => ' المحذوف',
     'Logout' => ' تسجيل الخروج',
-    'Edit account' => ' تعديل الصفحه الشخصيه',
+    'Edit account' => ' الصفحه الشخصيه',
 ];

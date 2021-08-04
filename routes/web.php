@@ -11,10 +11,10 @@
  */
 
 
-Route::group([
-    'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-], function () {
+//Route::group([
+//    'prefix' => LaravelLocalization::setLocale(),
+//    'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+//], function () {
     Route::group([], function () {
         Route::group(['prefix' => 'auth'], function () {
             require base_path('app/Starter/Users/Routes/auth.php');
@@ -31,5 +31,4 @@ Route::group([
             require base_path('app/Starter/ContactUs/Routes/web.php');
 //            Route::get('/', 'DashBoardController@getIndex');
         });
-    });
 });

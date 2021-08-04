@@ -35,10 +35,10 @@
 <!-- signin-right -->
 <div class="signin-left">
     <div class="signin-box">
-        <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">{{ appName() }}<span>.</span></a></h2>
-        <p>
-            {{ welcomeMessage() }}
-        </p>
+        <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">{{ appName() }}<span>..</span></a>
+            <img src="{{asset('img/branches.png')}}" width="100px" class="pt-4">
+
+        </h2>
         <p class="tx-12">&copy; {{ trans('auth.Copyright') }} {{ date('Y') }}. {{ trans('auth.All Rights Reserved') }}.</p>
     </div>
 </div>

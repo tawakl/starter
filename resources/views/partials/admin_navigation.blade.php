@@ -17,7 +17,7 @@
 
 <li class="nav-item with-sub settings {{(request()->is('*/cities*'))?"active":""}}">
     <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
-        <i class="icon ion-ios-gear-outline"></i>
+        <i class="icon ion-android-home"></i>
         <span>{{trans('navigation.Cities')}}</span>
     </a>
     <div class="sub-item">
@@ -35,13 +35,13 @@
     
     <li class="nav-item {{(request()->is('*/ContactUs*'))?"active":""}}">
         <a class="nav-link" href="{{ route('ContactUs') }}">
-            <i class="icon ion-android-people"></i>
+            <i class="icon ion-android-phone-portrait"></i>
             <span>{{trans('navigation.Contact')}}</span>
         </a>
     </li>
     <li class="nav-item {{(request()->is('*/policies*'))?"active":""}}">
         <a class="nav-link" href="{{ route('Policy.get.edit') }}">
-            <i class="icon ion-android-people"></i>
+            <i class="icon ion-paper-airplane"></i>
             <span>{{trans('navigation.policy')}}</span>
         </a>
     </li>
