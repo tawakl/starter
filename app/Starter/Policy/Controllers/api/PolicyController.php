@@ -24,8 +24,8 @@ class PolicyController extends Controller
     }
     public function index()
     {
-        $items = $this->model->paginate();
-        return $this->transformDataModInclude($items,'',new PolicyTransformer(),$this->ResourceType);
+        $items = $this->model->get()->only('description');
+        return response()->json(['data' => $items], 200);
     }
 
 }

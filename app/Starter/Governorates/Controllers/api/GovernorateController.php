@@ -25,8 +25,10 @@ class GovernorateController extends Controller
     }
     public function index()
     {
-        $items = $this->model->paginate();
-        return $this->transformDataModInclude($items,'',new ListGovernorateTransformer(),$this->ResourceType);
+        $items = $this->model->all();
+        return response()->json(['data' => $items], 200);
+
+//        return $this->transformDataModInclude($items,'',new ListGovernorateTransformer(),$this->ResourceType);
 
     }
 

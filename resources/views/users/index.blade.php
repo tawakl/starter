@@ -7,9 +7,9 @@
 {{--        <i class="fa fa-plus"></i> {{trans('app.Create')}}--}}
 {{--    </a>--}}
 {{--    @endif--}}
-    <a href="{{$module}}/export?{{@$_SERVER['QUERY_STRING']}}" class="btn btn-primary">
-        <i class="fa fa-arrow-down"></i> {{trans('app.Export')}}
-    </a>
+{{--    <a href="{{$module}}/export?{{@$_SERVER['QUERY_STRING']}}" class="btn btn-primary">--}}
+{{--        <i class="fa fa-arrow-down"></i> {{trans('app.Export')}}--}}
+{{--    </a>--}}
 </h6>
 @endsection
 @section('content')

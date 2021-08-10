@@ -27,15 +27,11 @@ class ContactUsController extends Controller
         $item = $this->model->create($request->all());
         if ($item) {
             return response()->json([
-                'meta' => [
                     'message' => trans('app.Created Successfully', ['module_name' => __('app.'.$this->module)])
-                ]
             ]);
         } else {
             return response()->json([
-                'meta' => [
                     'message' => trans('app.Can’t Be Created', ['module_name' => __('app.'.$this->module)])
-                ]
             ]);
         }
     }

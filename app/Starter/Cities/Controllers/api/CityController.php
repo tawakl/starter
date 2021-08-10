@@ -24,8 +24,10 @@ class CityController extends Controller
     }
     public function index()
     {
-        $items = $this->model->paginate();
-        return $this->transformDataModInclude($items,'',new ListCityTransformer(),$this->ResourceType);
+        $items = $this->model->get();
+        return response()->json(['data' => $items], 200);
+
+//        return $this->transformDataModInclude($items,'',new ListCityTransformer(),$this->ResourceType);
     }
 
 }
