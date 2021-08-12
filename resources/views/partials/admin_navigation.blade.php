@@ -15,24 +15,29 @@
     </li>
 
 
-<li class="nav-item with-sub settings {{(request()->is('*/cities*'))?"active":""}}">
-    <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">
-        <i class="icon ion-android-home"></i>
-        <span>{{trans('navigation.Cities')}}</span>
-    </a>
-    <div class="sub-item">
-        <ul>
-            <li class="{{(request()->is('*/cities*'))?"active":""}}">
-                <a href="/cities">{{trans('navigation.Cities')}}</a>
-            </li>
+{{--<li class="nav-item with-sub settings {{(request()->is('*/cities*'))?"active":""}}">--}}
+{{--    <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="true">--}}
+{{--        <i class="icon ion-android-home"></i>--}}
+{{--        <span>{{trans('navigation.Governorates')}}</span>--}}
+{{--    </a>--}}
+{{--    <div class="sub-item">--}}
+{{--        <ul>--}}
+{{--            <li class="{{(request()->is('*/cities*'))?"active":""}}">--}}
+{{--                <a href="/cities">{{trans('navigation.Cities')}}</a>--}}
+{{--            </li>--}}
 
-            <li class="{{(request()->is('*/governorates*'))?"active":""}}">
-                <a href="/governorates">{{trans('navigation.Governorates')}}</a>
-            </li>
-        </ul>
-    </div><!-- dropdown-menu -->
-</li>
-    
+{{--            <li class="{{(request()->is('*/governorates*'))?"active":""}}">--}}
+{{--                <a href="/governorates">{{trans('navigation.Governorates')}}</a>--}}
+{{--            </li>--}}
+{{--        </ul>--}}
+{{--    </div><!-- dropdown-menu -->--}}
+{{--</li>--}}
+    <li class="nav-item {{(request()->is('*/governorates*'))?"active":""}}">
+        <a class="nav-link" href="{{ route('governorates') }}">
+            <i class="icon ion-android-home"></i>
+            <span>{{trans('navigation.Governorates')}}</span>
+        </a>
+    </li>
     <li class="nav-item {{(request()->is('*/ContactUs*'))?"active":""}}">
         <a class="nav-link" href="{{ route('ContactUs') }}">
             <i class="icon ion-android-phone-portrait"></i>

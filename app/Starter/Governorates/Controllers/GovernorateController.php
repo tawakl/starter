@@ -78,49 +78,35 @@ class GovernorateController extends Controller
 //     * @param  int  $id
 //     * @return \Illuminate\Http\Response
 //     */
-//    public function edit($id)
-//    {
-//        $model = City::findOrFail($id);
-//        return view('cities.edit', compact('model'));
-//    }
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param  \Illuminate\Http\Request  $request
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function update(Request $request, $id)
-//    {
-//        $record = City::findOrFail($id);
-//        $record->update($request->all());
-//        flash()->success('<p class="text-center" style="font-size:20px; font-weight:900;font-family:Arial" >لقـــد تـــــــم التحــديــــــــث بنــجـــــــاح</p>');
-//        return redirect(route('cities.index'));
-//    }
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param  int  $id
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function destroy($id)
-//    {
-//        $record = City::find($id);
-//        if (!$record) {
-//            return response()->json([
-//                'status'  => 0,
-//                'message' => 'تعذر الحصول على البيانات'
-//            ]);
-//        }
-//
-//        $record->delete();
-//        return response()->json([
-//                'status'  => 1,
-//                'message' => 'تم الحذف بنجاح',
-//                'id'      => $id
-//            ]);
-//    }
+    public function getEdit($id)
+    {
+        authorize('edit-' . $this->module);
+        $data['module'] = $this->module;
+        $data['page_title'] = trans('app.Edit') . " " . $this->title;
+        $data['breadcrumb'] = [$this->title => $this->module.'?'.request()->getQueryString()];
+        $data['row'] = $this->model->findOrFail($id);
+        return view($this->module . '.edit', $data);
+    }
+
+    public function postEdit(Request $request, $id)
+    {
+        authorize('edit-' . $this->module);
+        $row = $this->model->findOrFail($id);
+        if ($row->update($request->all())) {
+            flash(trans('app.Update successfully'))->success();
+            return redirect('/' . $this->module);
+        }
+        flash()->error(trans('app.failed to save'));
+        return redirect('/' . $this->module);
+    }
+
+    public function getDelete($id)
+    {
+        authorize('delete-' . $this->module);
+        $row = $this->model->findOrFail($id);
+        $row->delete();
+        flash()->success(trans('app.Deleted Successfully'));
+        return back();
+    }
 
 }

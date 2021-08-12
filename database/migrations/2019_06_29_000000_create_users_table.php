@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('type')->nullable()->index(); // required
             $table->string('name');
             $table->string('governorate')->index();
-            $table->string('city')->index();
+            $table->string('city')->nullable();
             $table->string('result')->nullable();
             $table->string('email')->nullable()->index();
             $table->timestamp('email_verified_at')->nullable();

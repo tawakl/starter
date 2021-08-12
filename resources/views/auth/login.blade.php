@@ -28,7 +28,7 @@
         </div>
         <!-- form-group -->
         <button class="btn btn-primary btn-block btn-signin">{{ trans('auth.Submit') }}</button>
-        <p class="mg-b-0">{{trans('auth.Forgot your password')}} ? <a href="auth/forgot-password">{{ trans('auth.Forgot password') }}</a></p>
+{{--        <p class="mg-b-0">{{trans('auth.Forgot your password')}} ? <a href="auth/forgot-password">{{ trans('auth.Forgot password') }}</a></p>--}}
         {!! Form::close() !!}
     </div>
 </div>
@@ -36,10 +36,10 @@
 <div class="signin-left">
     <div class="signin-box">
         <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">{{ appName() }}<span>..</span></a>
-            <img src="{{asset('img/branches.png')}}" width="100px" class="pt-4">
+            <img src="{{asset('img/logo.jpeg')}}" width="120px" class="pt-4">
 
         </h2>
-        <p class="tx-12">&copy; {{ trans('auth.Copyright') }} {{ date('Y') }}. {{ trans('auth.All Rights Reserved') }}.</p>
+        <p class="tx-12">&copy; {{ trans('auth.Copyright') }} {{ date('Y') }}. {{ trans('auth.All Rights Reserved') }}.{{appName()}}</p>
     </div>
 </div>
 <!-- signin-left -->

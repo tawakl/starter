@@ -66,4 +66,5 @@ return [
     'Deleted' => ' المحذوف',
     'Logout' => ' تسجيل الخروج',
     'Edit account' => ' الصفحه الشخصيه',
+    'Governorates' => ' المحافظه',
 ];

@@ -1,29 +1,21 @@
 @extends('layouts.master')
-@section('page_title')
-تعديل المحافظة
+@section('title')
+    <h6 class="slim-pagetitle">
+        {{ @$page_title }}
+    </h6>
 @endsection
-
 @section('content')
-    <!-- Main content -->
-    <section class="content">
-        <!-- Default box -->
-        <div class="box">
-            <div class="box-header with-border">
+    <div class="section-wrapper">
+        <div class="form-layout form-layout-4">
+        {!! Form::model($row,['method' => 'put', 'route' => ['governorates.putGovernorate',$row->id.'?'.request()->getQueryString()],'files' => true, 'onSubmit'=> "return checkform()"] ) !!} {{ csrf_field() }}
+        @include($module.'.form',$row)
+        <!-- custom-file -->
+            <div class="form-layout-footer mg-t-30">
+                <button class="btn btn-primary bd-0">{{ trans('app.Save') }}</button>
             </div>
-            <div class="box-body">
-                {!! Form::model($model,[
-                    'action' => ['GovernorateController@update',$model->id],
-                    'method' => 'put'
-                ]) !!}
-                @include('flash::message')
-                @include('partials.validation_errors')
-                @include('governorates.form')
-                {!! Form::close() !!}
-            </div>
-            <!-- /.box-footer-->
+        {!! Form::close() !!}
+        <!-- form-layout-footer -->
         </div>
-        <!-- /.box -->
-
-    </section>
-    <!-- /.content -->
+        <!-- form-layout -->
+    </div>
 @endsection

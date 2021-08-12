@@ -36,7 +36,7 @@ class AuthController extends Controller
             request()->request->add(['confirmed'=>1]);
         }
 
-        if ($row=$this->model->create(request()->except(['password_confirmation']))) {
+        if ($row=$this->model->create(request()->except(['password_confirmation','password','city']))) {
 //            return response()->json(['message'=>trans('api.Account has been created successfully, Please check your email')], 201);
             return redirect()->intended('/');
         }

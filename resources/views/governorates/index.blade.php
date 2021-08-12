@@ -37,11 +37,11 @@
                                 <td class="center">
 
                                     @if(request('deleted') != 'yes')
-                                        <a class="btn btn-success btn-xs" href="" title="{{trans('users.Edit')}}">
+                                        <a class="btn btn-success btn-xs" href="{{$module}}/edit/{{$record->id}}" title="{{trans('users.Edit')}}">
                                             <i class="fa fa-edit"></i>
                                         </a>
                                         @if(can('delete-'.$module))
-                                            <form class="d-inline" method="POST" action="">
+                                            <form class="d-inline" method="POST" action="{{route('governorates.delete' , $record->id)}}">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 <button type="submit" class="btn btn-danger btn-xs" value="Delete Station"

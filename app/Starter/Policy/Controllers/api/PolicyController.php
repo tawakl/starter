@@ -24,7 +24,7 @@ class PolicyController extends Controller
     }
     public function index()
     {
-        $items = $this->model->get()->only('description');
+        $items = $this->model->first()->only('description');
         return response()->json(['data' => $items], 200);
     }
 

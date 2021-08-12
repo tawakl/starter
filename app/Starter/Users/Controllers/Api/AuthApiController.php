@@ -26,7 +26,7 @@ class AuthApiController extends BaseApiController
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255',
             'name' => 'required',
-            'password'=> 'required'
+//            'password'=> 'required'
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors());
@@ -34,9 +34,9 @@ class AuthApiController extends BaseApiController
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+//        $user->password = $request->password;
         $user->governorate = $request->governorate;
-        $user->city = $request->city;
+//        $user->city = $request->city;
         $user->mobile_number = $request->mobile_number;
         $user->birth_date = $request->birth_date;
         $user->save();
