@@ -1,6 +1,6 @@
 @extends('layouts.login')
 @section('content')
-<div class="signin-right">
+<div class="signin-left">
     <div class="signin-box">
         {!! Form::open(['method' => 'post'] ) !!}
         {{ csrf_field() }}
@@ -33,7 +33,7 @@
     </div>
 </div>
 <!-- signin-right -->
-<div class="signin-left">
+<div class="signin-right">
     <div class="signin-box">
         <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">{{ appName() }}<span>..</span></a>
             <img src="{{asset('img/logo.jpeg')}}" width="120px" class="pt-4">
