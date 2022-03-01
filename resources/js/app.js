@@ -6,7 +6,6 @@ import JsonExcel from 'vue-json-excel';
 Vue.component('downloadExcel', JsonExcel);
 Vue.component('pagination', require('laravel-vue-pagination'));
 
-
 window.Swal = Swal;
 const token = document.head.querySelector('meta[name="token"]');
 axios.defaults.headers.common['TOKEN'] = token.content;
