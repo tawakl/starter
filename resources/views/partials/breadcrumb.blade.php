@@ -7,6 +7,7 @@
 {{--        @endforeach --}}
 {{--        @endif--}}
 {{--        <li class="breadcrumb-item active" aria-current="page">{{ @$page_title }}</li>--}}
+        
     </ol>
     @yield('title')
 </div>
