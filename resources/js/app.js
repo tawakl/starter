@@ -1,10 +1,11 @@
 window.Vue = require('vue');
-import axios from 'axios'; 
+import axios from 'axios';
 import Swal from 'sweetalert2';
 import JsonExcel from 'vue-json-excel';
 
 Vue.component('downloadExcel', JsonExcel);
 Vue.component('pagination', require('laravel-vue-pagination'));
+
 
 window.Swal = Swal;
 const token = document.head.querySelector('meta[name="token"]');
@@ -17,11 +18,11 @@ const toast = Swal.mixin({
     showConfirmButton: false,
     timer: 3000
   });
-window.toast = toast;  
+window.toast = toast;
 window.obj = {};
 window.editmode = false;
 Vue.component('parents-index', require('./components/parents/Index.vue').default);
-import _ from 'lodash'; 
+import _ from 'lodash';
 Vue.prototype.trans = (key) => {
     return _.get(window.trans, key, key);
 };
@@ -33,5 +34,5 @@ import flatpickr from "flatpickr";
 // require('pc-bootstrap4-datetimepicker');
 // const app = new Vue({
 //     el: '#app',
-   
+
 //  });
