@@ -33,5 +33,10 @@ class AppServiceProvider extends ServiceProvider
             }
             return preg_match('/^\d+$/', $value) && strlen($value) == 11;
         });
+
+
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 }
