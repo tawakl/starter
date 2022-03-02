@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
 
@@ -35,13 +36,10 @@ class AppServiceProvider extends ServiceProvider
         });
 
 
-//        if($this->app->environment('production')) {
-//            \URL::forceScheme('https');
-//        }
-
-        if (env('FORCE_HTTPS', true)) { // Default value should be false for local server
-            // Force the application URL
+        if($this->app->environment('production')) {
             URL::forceScheme('https');
         }
+
+
     }
 }
