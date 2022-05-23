@@ -8,11 +8,11 @@
         <h3 class="signin-title-secondary">{{ trans('auth.Enter your email') }}.</h3>
         <div class="form-group">
             @php $input = 'email';
-            @endphp {!! Form::text($input,request($input),['class'=>'form-control','required'=>'required','placeholder'=>trans('auth.Enter your email')]) !!} 
+            @endphp {!! Form::text($input,request($input),['class'=>'form-control','required'=>'required','placeholder'=>trans('auth.Enter your email')]) !!}
             @if(@$errors)
             @foreach($errors->get($input) as $message)
             <span class='help-inline text-danger'>{{ $message }}</span>
-            @endforeach 
+            @endforeach
             @endif
         </div>
         <!-- form-group -->
