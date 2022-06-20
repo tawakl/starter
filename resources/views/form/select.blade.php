@@ -6,9 +6,9 @@
         @endphp
         {!! Form::select($name, $options,(@$row->$name)?:(@$value), $attributes) !!}
         @php
-           $name=(isset($error_name))?$error_name:$name;     
+           $name=(isset($error_name))?$error_name:$name;
         @endphp
-       
+
         @if(@$errors)
         @foreach($errors->get($name) as $message)
         <span class='help-inline text-danger'>{{ $message }}</span>

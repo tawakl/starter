@@ -29,6 +29,9 @@
             require base_path('app/Starter/Governorates/Routes/web.php');
             require base_path('app/Starter/Policy/Routes/web.php');
             require base_path('app/Starter/ContactUs/Routes/web.php');
+            require base_path('app/Starter/Categories/Routes/web.php');
+//            require base_path('app/Starter/Years/Routes/web.php');
+//            require base_path('app/Starter/Questions/Routes/web.php');
             Route::get('/', '\App\Starter\Users\Controllers\UsersController@getIndex');
         });
 });

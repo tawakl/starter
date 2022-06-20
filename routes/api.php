@@ -25,6 +25,7 @@ Route::get('user', '\App\Starter\Users\Controllers\Api\AuthApiController@getAuth
 
     require base_path('app/Starter/Cities/Routes/api.php');
     require base_path('app/Starter/Governorates/Routes/api.php');
+    require base_path('app/Starter/Categories/Routes/api.php');
     require base_path('app/Starter/Policy/Routes/api.php');
     require base_path('app/Starter/ContactUs/Routes/api.php');
 
