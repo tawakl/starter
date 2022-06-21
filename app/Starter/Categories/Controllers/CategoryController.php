@@ -4,9 +4,8 @@ namespace App\Starter\Categories\Controllers;
 
 use App\Exports\UsersExport;
 use App\Starter\Categories\Category;
+use App\Starter\Categories\Requests\QuestionRequest;
 use App\Starter\Questions\Question;
-use App\Starter\Users\Requests\CreateUserRequest;
-use App\Starter\Users\Requests\UpdateUserRequest;
 use App\Starter\Users\UserEnums;
 use App\Http\Controllers\Controller;
 use App\Starter\Years\Year;
@@ -51,28 +50,27 @@ class CategoryController extends Controller
     public function questions($cat_id,$year_id)
     {
         $data['module'] = $this->module;
-        $data['breadcrumb'] = ['years' => 'categories/'.$cat_id.'/years'];
+        $year =  Year::find($year_id);
+        $data['breadcrumb'] = [trans('app.List years') => 'categories/'.$cat_id.'/years'];
         $data['page_title'] = trans('app.List questions');
-        $data['rows'] = Year::where('id',$year_id)->whereHas('category',function ($q) use ($cat_id) {
-            $q->where('slug', $cat_id);
-        })->with('questions')->paginate();
-        return view($this->module . '.questions_index', $data);
+        return view($this->module . '.questions_index',$data, compact( 'year'))->with('no', 1);
     }
 
-    public function getCreate()
+    public function getCreate(Year  $year)
     {
+
         authorize('create-' . $this->module);
         $data['module'] = $this->module;
-        $data['page_title'] = trans('app.Create') . " " . $this->title;
+        $data['page_title'] = trans('app.Create_question');
         $data['breadcrumb'] = [$this->title => $this->module];
         $data['row'] = $this->question_model;
-        return view($this->module . '.create', $data);
+        return view($this->module . '.create',$data ,  compact(  'year'));
     }
 
-    public function postCreate(Request $request)
+    public function postCreate(QuestionRequest $request , Year  $year)
     {
         authorize('create-' . $this->module);
-        $row = $this->question_model->create($request->all()) ;
+        $row = $year->questions()->create($request->all()) ;
             flash()->success(trans('app.Created successfully'));
             return redirect('/' . $this->module);
 
@@ -80,18 +78,27 @@ class CategoryController extends Controller
         return redirect('/' . $this->module);
     }
 
+    public function getView($id)
+    {
+        authorize('view-' . $this->module);
+        $data['module'] = $this->module;
+        $data['page_title'] = trans('app.View_question');
+        $data['breadcrumb'] = [$this->title => $this->module.'?'.request()->getQueryString()];
+        $data['row'] = $this->question_model->findOrFail($id);
+        return view($this->module . '.view', $data);
+    }
 
     public function getEdit($id)
     {
         authorize('edit-' . $this->module);
         $data['module'] = $this->module;
-        $data['page_title'] = trans('app.Edit') . " " . $this->title;
+        $data['page_title'] = trans('app.Edit_question');
         $data['breadcrumb'] = [$this->title => $this->module.'?'.request()->getQueryString()];
         $data['row'] = $this->question_model->findOrFail($id);
         return view($this->module . '.edit', $data);
     }
 
-    public function postEdit(Request $request, $id)
+    public function postEdit(QuestionRequest $request, $id)
     {
         authorize('edit-' . $this->module);
         $row = $this->question_model->findOrFail($id);
@@ -102,24 +109,6 @@ class CategoryController extends Controller
         flash()->error(trans('app.failed to save'));
         return redirect('/' . $this->module);
     }
-//
-//    public function getView($phone)
-//    {
-//        authorize('view-' . $this->module);
-//        $data['module'] = $this->module;
-//        $data['page_title'] = trans('app.View') . " " . $this->title;
-//        $data['breadcrumb'] = [$this->title => $this->module.'?'.request()->getQueryString()];
-//        $data['rows'] = $this->model->where('mobile_number',$phone)->get();
-//        return view($this->module . '.view', $data);
-//    }
-//
-//    public function getDelete($id)
-//    {
-//        authorize('delete-' . $this->module);
-//        $row = $this->question_model->findOrFail($id);
-//        $row->delete();
-//        flash()->success(trans('app.Deleted Successfully'));
-//        return back();
-//    }
+
 
 }

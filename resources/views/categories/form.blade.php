@@ -3,38 +3,18 @@
     <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="col-md-8 float-left">
+              @php
+                  $attributes=['class'=>'form-control','label'=>trans('app.question'),'required'=>1];
+              @endphp
 
-{{--                <div class="form-group">--}}
-{{--                    @include('form.select',[--}}
-{{--                        'name'=>'year_id',--}}
-{{--                        'options'=>$row->getYears(),--}}
-{{--                        'attributes'=>[--}}
-{{--                            'class'=>'form-control',--}}
-{{--                            'required'=>'required',--}}
-{{--                            'label'=>trans('app.years'),--}}
-{{--                            ]--}}
-{{--                        ])--}}
-{{--            --}}
-{{--               </div>--}}
-                <div class="form-group">
-                    {!! Form::textarea('question',null,[
-                    'class' => 'form-control ckeditor',
-                     ]) !!}
-                </div>
-                <div class="form-group">
-                    {!! Form::textarea('question_recommendation',null,[
-                    'class' => 'form-control ckeditor',
-                     ]) !!}
-                </div>
+              @include('form.input',['name'=>'question','type'=>'textarea','attributes'=>$attributes])
 
-            </div>
-            <div class="col-md-4 float-right">
-                <article>
-                    <h2 class="text-center">{{trans('app.question')}}</h2>
-                    <p>{!!$row->question!!}</p>
-                </article>
-            </div>
+              @php
+                  $attributes=['class'=>'form-control','label'=>trans('app.question_recommendation')];
+              @endphp
+
+              @include('form.input',['name'=>'question_recommendation','type'=>'textarea','attributes'=>$attributes])
+
 </div>
 </div>
 </div>

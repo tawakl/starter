@@ -32,6 +32,12 @@
 {{--        </ul>--}}
 {{--    </div><!-- dropdown-menu -->--}}
 {{--</li>--}}
+    <li class="nav-item {{(request()->is('*/categories*'))?"active":""}}">
+        <a class="nav-link" href="{{ route('categories') }}">
+            <i class="icon ion-ios-book"></i>
+            <span>{{trans('app.questions')}}</span>
+        </a>
+    </li> 
     <li class="nav-item {{(request()->is('*/governorates*'))?"active":""}}">
         <a class="nav-link" href="{{ route('governorates') }}">
             <i class="icon ion-android-home"></i>

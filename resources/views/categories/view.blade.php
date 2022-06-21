@@ -5,60 +5,52 @@
 </h6>
 @endsection
 @section('content')
+{{--    <div class="container">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-8 ftco-animate" style="     word-wrap: break-word;">--}}
+{{--                <p class="mb-5">--}}
+{{--                    <img src={{asset('assets/images/mada.png')}} alt="" class="img-fluid">--}}
+{{--                </p>--}}
+{{--                <p> {!! $row->id!!}</p>--}}
+{{--                <p> {!! $row->question!!}</p>--}}
+{{--                <p> {!! $row->question_recommendation!!}</p>--}}
+
+{{--                <div class="about-author d-flex p-4 bg-light">--}}
+{{--                    <div class="desc">--}}
+{{--                        <h3>{{ $row->author}}</h3>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
+
+{{--            </div> <!-- .col-md-8 -->--}}
+
+{{--        </div>--}}
+{{--    </div>--}}
 <div class="section-wrapper">
     @if(can('edit-'.$module) && ! $row->deleted_at)
-    <a href="{{$module}}/edit/{{$row->id}}" class="btn btn-success">
+    <a href="{{$module}}/question/edit/{{$row->id}}" class="btn btn-success">
         <i class="fa fa-edit"></i> {{trans('users.Edit')}}
     </a><br>
     @endif
     <div class="table-responsive">
-        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered pull-left">
-            @if(@$row->is_admin)
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.Is Admin')}}</td>
-                <td width="75%" class="align-left">{{(@$row->is_admin)?trans('app.Yes'):trans('app.No')}}</td>
-            </tr>
-            @endif
+        <table cellpadding="0" cellspacing="0" border="0" style="  table-layout: fixed;" class="table table-striped table-bordered pull-left">
 
             <tr>
-                <td width="25%" class="align-left">{{trans('users.Type')}}</td>
-                <td width="75%" class="align-left">{{@$row->type}}</td>
-            </tr>
-            @if(@$row->role_id)
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.Role')}}</td>
-                <td width="75%" class="align-left">{{@$row->role->name}}</td>
-            </tr>
-            @endif
-
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.First name')}}</td>
-                <td width="75%" class="align-left">{{@$row->first_name}}</td>
+                <td width="25%" class="align-left">{{trans('app.id')}}</td>
+                <td width="75%" class="align-left">{{@$row->id}}</td>
             </tr>
 
             <tr>
-                <td width="25%" class="align-left">{{trans('users.Last name')}}</td>
-                <td width="75%" class="align-left">{{@$row->last_name}}</td>
+                <td width="25%" class="align-left">{{trans('app.question')}}</td>
+                <td width="75%" style="word-wrap: break-word;" class="align-left">{!!@$row->question!!}</td>
+
             </tr>
 
             <tr>
-                <td width="25%" class="align-left">{{trans('users.Address')}}</td>
-                <td width="75%" class="align-left">{{@$row->address}}</td>
+                <td width="25%" class="align-left">{{trans('app.question_recommendation')}}</td>
+                <td width="75%" style="word-wrap: break-word;" class="align-left">{!!@$row->question_recommendation!!}</td>
             </tr>
-
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.Email')}}</td>
-                <td width="75%" class="align-left">{{@$row->email}}</td>
-            </tr>
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.Mobile')}}</td>
-                <td width="75%" class="align-left">{{@$row->mobile_number}}</td>
-            </tr>
-            <tr>
-                <td width="25%" class="align-left">{{trans('users.Confirmed')}}</td>
-                <td width="75%" class="align-left">{{@$row->confirmed ? trans('users.Confirmed') : trans('users.Not Confirmed') }}</td>
-            </tr>
-
 
         </table>
     </div>

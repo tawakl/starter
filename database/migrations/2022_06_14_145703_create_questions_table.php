@@ -15,10 +15,9 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('question');
-            $table->text('question_recommendation');
+            $table->longText('question');
+            $table->longText('question_recommendation')->nullable();
             $table->integer('year_id');
-//            $table->foreign('year_id')->references('id')->on('years')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -15,5 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call(GovernorateSeeder::class);
         $this->call(CitySeeder::class);
         $this->call(PolicySeeder::class);
+        $this->call(CategoryTableDataSeeder::class);
+        $this->call(YearsTableDataSeeder::class);
+        $this->call(QuestionsTableDataSeeder::class);
     }
 }
