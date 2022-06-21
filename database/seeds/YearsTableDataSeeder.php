@@ -15,6 +15,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>1,
                 'year'=>'عمر سنه',
+                'slug'=>'one',
                 'category_id'=>'1',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -22,6 +23,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>2,
                 'year'=>'عمر سنتين',
+                'slug'=>'two',
                 'category_id'=>'1',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -29,6 +31,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>3,
                 'year'=>'عمر ثلاثه سنوات',
+                'slug'=>'three',
                 'category_id'=>'1',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -36,6 +39,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>4,
                 'year'=>'عمر اربعه سنوات',
+                'slug'=>'four',
                 'category_id'=>'1',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -43,6 +47,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>5,
                 'year'=>'عمر خمسه سنوات',
+                'slug'=>'five',
                 'category_id'=>'1',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -50,6 +55,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>6,
                 'year'=>'عمر سته سنوات',
+                'slug'=>'six',
                 'category_id'=>'1',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -57,6 +63,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>7,
                 'year'=>'عمر سنه',
+                'slug'=>'one',
                 'category_id'=>'2',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -64,6 +71,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>8,
                 'year'=>'عمر سنتين',
+                'slug'=>'two',
                 'category_id'=>'2',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -71,6 +79,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>9,
                 'year'=>'عمر ثلاثه سنوات',
+                'slug'=>'three',
                 'category_id'=>'2',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -78,6 +87,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>10,
                 'year'=>'عمر اربعه سنوات',
+                'slug'=>'four',
                 'category_id'=>'2',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -85,6 +95,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>11,
                 'year'=>'عمر خمسه سنوات',
+                'slug'=>'five',
                 'category_id'=>'2',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -92,6 +103,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>12,
                 'year'=>'عمر سته سنوات',
+                'slug'=>'six',
                 'category_id'=>'2',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -99,6 +111,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>13,
                 'year'=>'عمر سنه',
+                'slug'=>'one',
                 'category_id'=>'3',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -106,6 +119,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>14,
                 'year'=>'عمر سنتين',
+                'slug'=>'two',
                 'category_id'=>'3',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -113,6 +127,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>15,
                 'year'=>'عمر ثلاثه سنوات',
+                'slug'=>'three',
                 'category_id'=>'3',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -120,6 +135,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>16,
                 'year'=>'عمر اربعه سنوات',
+                'slug'=>'four',
                 'category_id'=>'3',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -127,6 +143,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>17,
                 'year'=>'عمر خمسه سنوات',
+                'slug'=>'five',
                 'category_id'=>'3',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -134,6 +151,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>18,
                 'year'=>'عمر سته سنوات',
+                'slug'=>'six',
                 'category_id'=>'3',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -141,6 +159,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>19,
                 'year'=>'عمر سنه',
+                'slug'=>'one',
                 'category_id'=>'4',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -148,6 +167,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>20,
                 'year'=>'عمر سنتين',
+                'slug'=>'two',
                 'category_id'=>'4',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -155,6 +175,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>21,
                 'year'=>'عمر ثلاثه سنوات',
+                'slug'=>'three',
                 'category_id'=>'4',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -162,6 +183,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>22,
                 'year'=>'عمر اربعه سنوات',
+                'slug'=>'four',
                 'category_id'=>'4',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -169,6 +191,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>23,
                 'year'=>'عمر خمسه سنوات',
+                'slug'=>'five',
                 'category_id'=>'4',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -176,6 +199,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>24,
                 'year'=>'عمر سته سنوات',
+                'slug'=>'six',
                 'category_id'=>'4',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -183,6 +207,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>25,
                 'year'=>'عمر سنه',
+                'slug'=>'one',
                 'category_id'=>'5',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -190,6 +215,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>26,
                 'year'=>'عمر سنتين',
+                'slug'=>'two',
                 'category_id'=>'5',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -197,6 +223,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>27,
                 'year'=>'عمر ثلاثه سنوات',
+                'slug'=>'three',
                 'category_id'=>'5',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -204,6 +231,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>28,
                 'year'=>'عمر اربعه سنوات',
+                'slug'=>'four',
                 'category_id'=>'5',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -211,6 +239,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>29,
                 'year'=>'عمر خمسه سنوات',
+                'slug'=>'five',
                 'category_id'=>'5',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')
@@ -218,6 +247,7 @@ class YearsTableDataSeeder extends Seeder
             [
                 'id'=>30,
                 'year'=>'عمر سته سنوات',
+                'slug'=>'six',
                 'category_id'=>'5',
                 'created_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => \Carbon\Carbon::now()->format('Y-m-d H:i:s')

@@ -17,6 +17,8 @@ class CreateYearsTable extends Migration
             $table->bigIncrements('id');
             $table->string('year');
             $table->integer('category_id');
+            $table->string('slug')->nullable();
+
 //            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
 
