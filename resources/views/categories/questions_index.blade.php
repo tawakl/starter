@@ -36,7 +36,7 @@
                             <td>{!! Str::limit($q->question_recommendation, 30)!!}</td>
 
                             <td class="center">
-                                <a class="btn btn-primary btn-xs" href="{{$module}}/question/edit/{{$q->id}}" title="{{trans('app.edit')}}">
+                                <a class="btn btn-primary btn-xs" href="{{$module}}/{{$year->id}}/question/edit/{{$q->id}}" title="{{trans('app.edit')}}">
                                     <i class="fa fa-edit"></i>
                                 </a>
 

@@ -72,7 +72,7 @@ class CategoryController extends Controller
         authorize('create-' . $this->module);
         $row = $year->questions()->create($request->all()) ;
             flash()->success(trans('app.Created successfully'));
-            return redirect('/' . $this->module);
+            return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
 
         flash()->error(trans('app.failed to save'));
         return redirect('/' . $this->module);
@@ -88,23 +88,23 @@ class CategoryController extends Controller
         return view($this->module . '.view', $data);
     }
 
-    public function getEdit($id)
+    public function getEdit(Year  $year ,$id)
     {
         authorize('edit-' . $this->module);
         $data['module'] = $this->module;
         $data['page_title'] = trans('app.Edit_question');
         $data['breadcrumb'] = [$this->title => $this->module.'?'.request()->getQueryString()];
-        $data['row'] = $this->question_model->findOrFail($id);
+        $data['row'] =  $year->questions()->findOrFail($id);
         return view($this->module . '.edit', $data);
     }
 
-    public function postEdit(QuestionRequest $request, $id)
+    public function postEdit(QuestionRequest $request, Year  $year ,$id)
     {
         authorize('edit-' . $this->module);
-        $row = $this->question_model->findOrFail($id);
+        $row = $year->questions()->findOrFail($id);
         if ($row->update($request->all())) {
             flash(trans('app.Update successfully'))->success();
-            return redirect('/' . $this->module);
+            return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
         }
         flash()->error(trans('app.failed to save'));
         return redirect('/' . $this->module);
