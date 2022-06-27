@@ -35,7 +35,14 @@ class User extends Authenticatable implements JWTSubject
         'profile_picture',
         'governorate',
         'city',
-        'birth_date'
+        'birth_date',
+        'lang_age',
+        'move_age',
+        'think_age',
+        'social_age',
+        'self_age',
+        'test_age',
+        'age',
     ];
 
     public function setPasswordAttribute($value)

@@ -34,11 +34,16 @@ class AuthApiController extends BaseApiController
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-//        $user->password = $request->password;
         $user->governorate = $request->governorate;
-//        $user->city = $request->city;
         $user->mobile_number = $request->mobile_number;
         $user->birth_date = $request->birth_date;
+        $user->lang_age = $request->lang_age;
+        $user->move_age = $request->move_age;
+        $user->think_age = $request->think_age;
+        $user->social_age = $request->social_age;
+        $user->self_age = $request->self_age;
+        $user->test_age = $request->test_age;
+        $user->age = $request->age;
         $user->save();
         $user = User::first();
         $token = JWTAuth::fromUser($user);

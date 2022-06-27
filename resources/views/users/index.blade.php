@@ -57,18 +57,16 @@
                     <th class="wd-15p">{{trans('users.Mobile')}} </th>
                     <th class="wd-15p">{{trans('users.Governorate')}} </th>
                     <th class="wd-15p">{{trans('users.Result')}} </th>
-                    <th class="wd-15p">&nbsp;</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($rows as $row)
                 <tr>
-                    <td class="center">{{$row->id}}</td>
+                    <td>{{ $no++ }}</td>
                     <td class="center">{{$row->name}}</td>
                     <td class="center">{{$row->email}}</td>
                     <td class="center">  <a href="{{$module}}/view/{{$row->mobile_number}}" >{{$row->mobile_number}}</a></td>
                     <td class="center">{{$row->governorate}}</td>
-                    <td class="center"></td>
                     <td class="center">
                         <a class="btn btn-primary btn-xs" href="{{$module}}/view/{{$row->mobile_number}}" title="{{trans('users.View')}}">
                             <i class="fa fa-eye"></i>

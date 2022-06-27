@@ -26,6 +26,34 @@
                 <td width="25%" class="align-left">{{trans('users.birth date')}}</td>
                 <td width="75%" class="align-left">{{$row->birth_date}}</td>
             </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.lang_age')}}</td>
+                <td width="75%" class="align-left">{{$row->lang_age}}</td>
+            </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.move_age')}}</td>
+                <td width="75%" class="align-left">{{$row->move_age}}</td>
+            </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.think_age')}}</td>
+                <td width="75%" class="align-left">{{$row->think_age}}</td>
+            </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.social_age')}}</td>
+                <td width="75%" class="align-left">{{$row->social_age}}</td>
+            </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.self_age')}}</td>
+                <td width="75%" class="align-left">{{$row->self_age}}</td>
+            </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.test_age')}}</td>
+                <td width="75%" class="align-left">{{$row->test_age}}</td>
+            </tr>
+            <tr>
+                <td width="25%" class="align-left">{{trans('users.age')}}</td>
+                <td width="75%" class="align-left">{{$row->age}}</td>
+            </tr>
 
         </table>
         @endforeach

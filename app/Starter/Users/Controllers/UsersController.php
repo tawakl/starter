@@ -32,7 +32,7 @@ class UsersController extends Controller
         $data['rows'] = $this->model->getData()->paginate(12);
 
         $data['rows']->appends(request(['type', 'deleted']));
-        return view($this->module . '.index', $data);
+        return view($this->module . '.index', $data)->with('no', 1);
     }
 
     public function getCreate()
