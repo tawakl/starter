@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $year =  Year::find($year_id);
         $data['breadcrumb'] = [trans('app.List years') => 'categories/'.$cat_id.'/years'];
         $data['page_title'] = trans('app.List questions');
-        return view($this->module . '.questions_index',$data, compact( 'year'))->with('no', 1);
+        return view($this->module . '.questions_index',$data, compact( 'year'));
     }
 
     public function getCreate(Year  $year)
