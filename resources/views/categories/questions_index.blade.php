@@ -28,10 +28,10 @@
             </thead>
             <tbody>
 
-                    @foreach ($year->questions as $q)
+                    @foreach ($year->questions->sortBy('id') as $q)
 
                         <tr>
-                            <td>{{ $q->id }}</td>
+                            <td>{{ $no++ }}</td>
                             <td>{!! Str::limit($q->question, 30)!!}</td>
                             <td>{!! Str::limit($q->question_recommendation, 30)!!}</td>
 

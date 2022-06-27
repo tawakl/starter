@@ -53,7 +53,7 @@ class CategoryController extends Controller
         $year =  Year::find($year_id);
         $data['breadcrumb'] = [trans('app.List years') => 'categories/'.$cat_id.'/years'];
         $data['page_title'] = trans('app.List questions');
-        return view($this->module . '.questions_index',$data, compact( 'year'));
+        return view($this->module . '.questions_index',$data, compact( 'year'))->with('no', 1);
     }
 
     public function getCreate(Year  $year)
@@ -75,7 +75,7 @@ class CategoryController extends Controller
             return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
 
         flash()->error(trans('app.failed to save'));
-        return redirect('/' . $this->module);
+        return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
     }
 
     public function getView($id)
@@ -107,7 +107,7 @@ class CategoryController extends Controller
             return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
         }
         flash()->error(trans('app.failed to save'));
-        return redirect('/' . $this->module);
+        return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
     }
 
 
