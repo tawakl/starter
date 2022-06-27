@@ -31,7 +31,7 @@
                     @foreach ($year->questions as $q)
 
                         <tr>
-                            <td>{{ $no++ }}</td>
+                            <td>{{ $q->id }}</td>
                             <td>{!! Str::limit($q->question, 30)!!}</td>
                             <td>{!! Str::limit($q->question_recommendation, 30)!!}</td>
 
