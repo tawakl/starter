@@ -43,7 +43,19 @@
                                 <a class="btn btn-success btn-xs" href="{{$module}}/question/view/{{$q->id}}" title="{{trans('app.view')}}">
                                     <i class="fa fa-eye"></i>
                                 </a>
+                                @if(request('deleted') != 'yes')
+                                    @if(can('delete-'.$module))
+                                        <form class="d-inline" method="POST" action="{{$module}}/{{$year->id}}/question/delete/{{$q->id}}">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                            <button type="submit" class="btn btn-danger btn-xs" value="Delete Station"
+                                                    data-confirm="{{trans('users.Are you sure you want to delete this item')}}?">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    @endif
 
+                                @endif
                             </td>
                         </tr>
                     @endforeach

@@ -19,6 +19,6 @@ Route::group(['prefix' => 'categories'], function () {
     Route::get('/{cat_id}/{year_id}/questions', '\App\Starter\Categories\Controllers\CategoryController@questions')
         ->name('questions');
 
-    Route::delete('/delete/{id}', '\App\Starter\Categories\Controllers\CategoryController@getDelete')
+    Route::delete('{year}/question/delete/{id}', '\App\Starter\Categories\Controllers\CategoryController@getDelete')
         ->name('delete');
 });

@@ -4,6 +4,7 @@ namespace App\Starter\Users\Controllers;
 
 use App\Starter\Users\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -51,7 +52,7 @@ class AuthController extends Controller
         return view($this->module.'.login', $data);
     }
 
-    public function postLogin(UserLoginRequest $request)
+    public function postLogin(Request $request)
     {
         $row = $this->model->where('mobile_number', trim(request('mobile_number')))->first();
         if (!$row) {

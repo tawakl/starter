@@ -43,7 +43,9 @@ class CategoryController extends Controller
 
         $data['page_title'] = trans('app.List years');
         $data['breadcrumb'] = [$this->title => $this->module];
-        $data['rows'] = $this->model->where('slug',$slug)->with('years')->get();
+        $data['rows'] = $this->model->where('slug',$slug)->with(['years' => function ($query) {
+            $query->where('slug', '!=', 'one');
+        }])->get();
         return view($this->module . '.years_index', $data);
     }
 
@@ -108,6 +110,15 @@ class CategoryController extends Controller
         }
         flash()->error(trans('app.failed to save'));
         return redirect('/categories/' . $year->category->slug .'/'.$year->id. '/questions' );
+    }
+
+    public function getDelete(Year  $year ,$id)
+    {
+        authorize('delete-' . $this->module);
+        $row = $year->questions()->findOrFail($id);
+        $row->delete();
+        flash()->success(trans('app.Deleted Successfully'));
+        return back();
     }
 
 
