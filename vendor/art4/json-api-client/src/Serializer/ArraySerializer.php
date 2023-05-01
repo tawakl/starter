@@ -20,19 +20,19 @@
 namespace Art4\JsonApiClient\Serializer;
 
 use Art4\JsonApiClient\Accessable;
-use Art4\JsonApiClient\ResourceNullInterface;
 use Art4\JsonApiClient\V1\ResourceNull;
 
 final class ArraySerializer implements Serializer
 {
-    private $config = [
+    /** @var array<string, mixed> */
+    private array $config = [
         'recursive' => false,
     ];
 
     /**
      * Setup the serializer
      *
-     * @param array $params
+     * @param array<string, mixed> $params
      */
     public function __construct(array $params = [])
     {
@@ -46,18 +46,13 @@ final class ArraySerializer implements Serializer
     /**
      * Convert data in an array
      *
-     * @param Art4\JsonApiClient\Accessable $data The data for serialization
-     *
-     * @return array
+     * @return array<string, mixed>|null
      */
-    public function serialize(Accessable $data)
+    public function serialize(Accessable $data): ?array
     {
         $fullArray = (bool) $this->config['recursive'];
 
-        if (
-            $data instanceof ResourceNull
-            or $data instanceof ResourceNullInterface // #TODO Don't use ResourceNullInterface anymore
-        ) {
+        if ($data instanceof ResourceNull) {
             return null;
         }
 
@@ -79,7 +74,7 @@ final class ArraySerializer implements Serializer
     /**
      * Transforms objects to arrays
      *
-     * @param $val
+     * @param mixed $val
      *
      * @return mixed
      */
@@ -91,7 +86,9 @@ final class ArraySerializer implements Serializer
             return $this->serialize($val);
         } else {
             // Fallback for stdClass objects
-            return json_decode(json_encode($val), true);
+            $jsonVal = json_encode($val, JSON_THROW_ON_ERROR);
+
+            return json_decode($jsonVal, true);
         }
     }
 }

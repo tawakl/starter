@@ -42,7 +42,7 @@ final class DocumentLink extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException(
@@ -130,12 +130,10 @@ final class DocumentLink extends AbstractElement
     /**
      * Set a pagination link
      *
-     * @param string $name  The name of the link
-     * @param string $value The link
-     *
-     * @return self
+     * @param string                   $name  The name of the link
+     * @param string|object|null|mixed $value The link
      */
-    private function setPaginationLink($name, $value)
+    private function setPaginationLink(string $name, $value): void
     {
         if (! is_object($value) and ! is_string($value) and ! is_null($value)) {
             throw new ValidationException(
@@ -154,10 +152,10 @@ final class DocumentLink extends AbstractElement
     /**
      * Set a link
      *
-     * @param string $name The name of the link
-     * @param string $link The link
+     * @param string              $name The name of the link
+     * @param string|object|mixed $link The link
      */
-    private function setLink($name, $link)
+    private function setLink(string $name, $link): void
     {
         if (! is_string($link) and ! is_object($link)) {
             throw new ValidationException(

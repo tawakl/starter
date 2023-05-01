@@ -37,13 +37,13 @@ final class Link extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException('Link has to be an object or string, "' . gettype($object) . '" given.');
         }
 
-        if (! array_key_exists('href', $object)) {
+        if (! property_exists($object, 'href')) {
             throw new ValidationException('Link must have a "href" attribute.');
         }
 
@@ -74,7 +74,7 @@ final class Link extends AbstractElement
      * @param string        $name The Name
      * @param string|object $link The Link
      */
-    private function setAsLink($name, $link)
+    private function setAsLink(string $name, $link): void
     {
         if ($name === 'meta') {
             $this->set($name, $this->create('Meta', $link));

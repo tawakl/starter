@@ -3,8 +3,8 @@
 namespace Laravel\Scout\Console;
 
 use Illuminate\Console\Command;
-use Laravel\Scout\Events\ModelsImported;
 use Illuminate\Contracts\Events\Dispatcher;
+use Laravel\Scout\Events\ModelsImported;
 
 class ImportCommand extends Command
 {
@@ -13,7 +13,9 @@ class ImportCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'scout:import {model}';
+    protected $signature = 'scout:import
+            {model : Class name of model to bulk import}
+            {--c|chunk= : The number of records to import at a time (Defaults to configuration value: `scout.chunk.searchable`)}';
 
     /**
      * The console command description.
@@ -40,7 +42,7 @@ class ImportCommand extends Command
             $this->line('<comment>Imported ['.$class.'] models up to ID:</comment> '.$key);
         });
 
-        $model::makeAllSearchable();
+        $model::makeAllSearchable($this->option('chunk'));
 
         $events->forget(ModelsImported::class);
 

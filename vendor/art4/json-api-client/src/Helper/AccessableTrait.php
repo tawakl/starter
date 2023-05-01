@@ -30,19 +30,16 @@ use Art4\JsonApiClient\Exception\AccessException;
 trait AccessableTrait
 {
     /**
-     * @var array
+     * @var array<mixed>
      */
-    private $data = [];
+    private array $data = [];
 
     /**
      * Set a value
      *
-     * @param string $key   The Key
      * @param mixed  $value The Value
-     *
-     * @return self
      */
-    protected function set($key, $value)
+    final protected function set(string $key, $value): void
     {
         // Allow non-associative array for collections
         if ($key === '') {
@@ -50,16 +47,14 @@ trait AccessableTrait
         } else {
             $this->data[$key] = $value;
         }
-
-        return $this;
     }
 
     /**
      * Returns the keys of all setted values
      *
-     * @return array Keys of all setted values
+     * @return array<string> Keys of all setted values
      */
-    public function getKeys()
+    final public function getKeys(): array
     {
         return array_keys($this->data);
     }
@@ -68,10 +63,8 @@ trait AccessableTrait
      * Check if a value exists
      *
      * @param mixed $key The key
-     *
-     * @return bool
      */
-    public function has($key)
+    final public function has($key): bool
     {
         $key = $this->parseKey($key);
 
@@ -90,7 +83,7 @@ trait AccessableTrait
 
         // #TODO Handle other objects and arrays
         if (! $value instanceof Accessable) {
-            //throw new AccessException('The existance for the key "' . $key->raw . '" could\'nt be checked.');
+            // throw new AccessException('The existance for the key "' . $key->raw . '" could\'nt be checked.');
             return false;
         }
 
@@ -128,11 +121,11 @@ trait AccessableTrait
     /**
      * Get a value by the key
      *
-     * @param string $key The key of the value
+     * @throws AccessException
      *
      * @return mixed The value
      */
-    private function getValue($key)
+    private function getValue(string $key)
     {
         if (array_key_exists($key, $this->data)) {
             return $this->data[$key];
@@ -144,11 +137,11 @@ trait AccessableTrait
     /**
      * Parse a dot.notated.key to an object
      *
-     * @param string|AccessKey $key The key
+     * @param string|AccessKey<string> $key The key
      *
-     * @return AccessKey The parsed key
+     * @return AccessKey<string> The parsed key
      */
-    private function parseKey($key)
+    private function parseKey($key): AccessKey
     {
         if (is_object($key) and $key instanceof AccessKey) {
             return $key;

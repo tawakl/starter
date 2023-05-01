@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 
 <base href="{{app()->make("url")->to('/')}}/" />
-<title>{{ appName() }} :: {{@$page_title}}</title>
+<title>{{ "questions-system" }} :: {{@$page_title}}</title>
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta http-equiv="Content-Language" content="en" />
 <meta name="msapplication-TileColor" content="#2d89ef">

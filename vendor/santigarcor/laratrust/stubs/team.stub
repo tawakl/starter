@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use Laratrust\Models\LaratrustTeam;
+use Laratrust\Models\Team as LaratrustTeam;
 
 class DummyClass extends LaratrustTeam
 {
-    //
+    public $guarded = [];
 }

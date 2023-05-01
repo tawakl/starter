@@ -1,4 +1,6 @@
-<?php namespace Barryvdh\Debugbar;
+<?php
+
+namespace Barryvdh\Debugbar;
 
 use DebugBar\DebugBar;
 use DebugBar\JavascriptRenderer as BaseJavascriptRenderer;
@@ -21,6 +23,7 @@ class JavascriptRenderer extends BaseJavascriptRenderer
         $this->cssVendors['fontawesome'] = __DIR__ . '/Resources/vendor/font-awesome/style.css';
         $this->jsFiles['laravel-sql'] = __DIR__ . '/Resources/sqlqueries/widget.js';
         $this->jsFiles['laravel-cache'] = __DIR__ . '/Resources/cache/widget.js';
+        $this->jsFiles['laravel-view'] = __DIR__ . '/Resources/templates/widget.js';
 
         $theme = config('debugbar.theme', 'auto');
         switch ($theme) {
@@ -42,7 +45,6 @@ class JavascriptRenderer extends BaseJavascriptRenderer
      */
     public function setUrlGenerator($url)
     {
-
     }
 
     /**
@@ -51,7 +53,8 @@ class JavascriptRenderer extends BaseJavascriptRenderer
     public function renderHead()
     {
         $cssRoute = route('debugbar.assets.css', [
-            'v' => $this->getModifiedTime('css')
+            'v' => $this->getModifiedTime('css'),
+            'theme' => config('debugbar.theme', 'auto'),
         ]);
 
         $jsRoute = route('debugbar.assets.js', [
@@ -61,11 +64,11 @@ class JavascriptRenderer extends BaseJavascriptRenderer
         $cssRoute = preg_replace('/\Ahttps?:/', '', $cssRoute);
         $jsRoute  = preg_replace('/\Ahttps?:/', '', $jsRoute);
 
-        $html  = "<link rel='stylesheet' type='text/css' property='stylesheet' href='{$cssRoute}'>";
-        $html .= "<script type='text/javascript' src='{$jsRoute}'></script>";
+        $html  = "<link rel='stylesheet' type='text/css' property='stylesheet' href='{$cssRoute}' data-turbolinks-eval='false' data-turbo-eval='false'>";
+        $html .= "<script src='{$jsRoute}' data-turbolinks-eval='false' data-turbo-eval='false'></script>";
 
         if ($this->isJqueryNoConflictEnabled()) {
-            $html .= '<script type="text/javascript">jQuery.noConflict(true);</script>' . "\n";
+            $html .= '<script data-turbo-eval="false">jQuery.noConflict(true);</script>' . "\n";
         }
 
         $html .= $this->getInlineHtml();
@@ -145,7 +148,7 @@ class JavascriptRenderer extends BaseJavascriptRenderer
             return $uris;
         }
 
-        if (substr($uri, 0, 1) === '/' || preg_match('/^([a-zA-Z]+:\/\/|[a-zA-Z]:\/|[a-zA-Z]:\\\)/', $uri)) {
+        if (substr($uri ?? '', 0, 1) === '/' || preg_match('/^([a-zA-Z]+:\/\/|[a-zA-Z]:\/|[a-zA-Z]:\\\)/', $uri ?? '')) {
             return $uri;
         }
         return rtrim($root, '/') . "/$uri";

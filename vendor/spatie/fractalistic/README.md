@@ -1,10 +1,12 @@
+
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
+
 # A developer friendly wrapper around Fractal
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/fractalistic.svg?style=flat-square)](https://packagist.org/packages/spatie/fractalistic)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/fractalistic/run-tests?label=tests)
 [![Quality Score](https://img.shields.io/scrutinizer/g/spatie/fractalistic.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/fractalistic)
-[![StyleCI](https://styleci.io/repos/76027929/shield?branch=master)](https://styleci.io/repos/76027929)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/fractalistic.svg?style=flat-square)](https://packagist.org/packages/spatie/fractalistic)
 
 [Fractal](http://fractal.thephpleague.com/) is an amazing package to transform data before using it in an API. Unfortunately working with Fractal can be a bit verbose.
@@ -17,7 +19,7 @@ use League\Fractal\Resource\Collection;
 
 $books = [
    ['id'=>1, 'title'=>'Hogfather', 'characters' => [...]], 
-   ['id'=>2, 'title'=>'Game Of Kill Everyone', 'characters' => [...]]
+   ['id'=>2, 'title'=>'Game Of Thrones', 'characters' => [...]]
 ];
 
 $manager = new Manager();
@@ -232,7 +234,7 @@ This will return the following array:
 [
    'data' => [
         ['title' => 'Hogfather'],
-        ['title' => 'Game Of Kill Everyone'],
+        ['title' => 'Game Of Thrones'],
     ],
    'meta' => [
         ['key1' => 'value1'], 
@@ -339,11 +341,11 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you've found a bug regarding security please mail [security@spatie.be](mailto:security@spatie.be) instead of using the issue tracker.
 
 ## Postcardware
 

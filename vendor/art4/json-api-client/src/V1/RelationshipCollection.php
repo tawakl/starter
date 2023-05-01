@@ -37,7 +37,7 @@ final class RelationshipCollection extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException('Relationships has to be an object, "' . gettype($object) . '" given.');
@@ -50,7 +50,7 @@ final class RelationshipCollection extends AbstractElement
         $object_vars = get_object_vars($object);
 
         if (count($object_vars) === 0) {
-            return $this;
+            return;
         }
 
         foreach ($object_vars as $name => $value) {

@@ -35,11 +35,11 @@
 <!-- signin-right -->
 <div class="signin-right">
     <div class="signin-box">
-        <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">{{ appName() }}<span>..</span></a>
+        <h2 class="slim-logo"><a href="{{App::make('url')->to('/')}}/">"questions-system"<span>..</span></a>
             <img src="{{asset('img/logo.jpeg')}}" width="120px" class="pt-4">
 
         </h2>
-        <p class="tx-12">&copy; {{ trans('auth.Copyright') }} {{ date('Y') }}. {{ trans('auth.All Rights Reserved') }}.{{appName()}}</p>
+        <p class="tx-12">&copy; {{ trans('auth.Copyright') }} {{ date('Y') }}. {{ trans('auth.All Rights Reserved') }}.{{"questions-system"}}</p>
     </div>
 </div>
 <!-- signin-left -->

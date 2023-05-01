@@ -52,7 +52,7 @@
 <!-- signin-right -->
 <div class="signin-left">
     <div class="signin-box">
-        <h2 class="slim-logo"><a href="{{\Illuminate\Support\Facades\App::make('url')->to('/')}}/">{{ appName() }}<span>.</span></a></h2>
+        <h2 class="slim-logo"><a href="{{\Illuminate\Support\Facades\App::make('url')->to('/')}}/">{{ "questions-system" }}<span>.</span></a></h2>
         <p>
             {{ welcomeMessage() }}
         </p>

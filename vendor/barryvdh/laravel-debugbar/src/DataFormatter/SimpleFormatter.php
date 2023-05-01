@@ -9,6 +9,7 @@ use DebugBar\DataFormatter\DataFormatter;
  *
  * @see https://github.com/symfony/symfony/blob/v3.4.4/src/Symfony/Component/HttpKernel/DataCollector/Util/ValueExporter.php
  */
+#[\AllowDynamicProperties]
 class SimpleFormatter extends DataFormatter
 {
     /**
@@ -60,7 +61,8 @@ class SimpleFormatter extends DataFormatter
             }
 
             if ($deep) {
-                return sprintf("[\n%s%s\n%s]", $indent, implode(sprintf(", \n%s", $indent), $a), str_repeat('  ', $depth - 1));
+                $args = [$indent, implode(sprintf(", \n%s", $indent), $a), str_repeat('  ', $depth - 1)];
+                return sprintf("[\n%s%s\n%s]", ...$args);
             }
 
             $s = sprintf('[%s]', implode(', ', $a));

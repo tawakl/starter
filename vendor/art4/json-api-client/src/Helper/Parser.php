@@ -32,13 +32,10 @@ use Art4\JsonApiClient\V1\Factory;
 final class Parser
 {
     /**
-     * @param string $jsonString
-     *
-     * @throws Art4\JsonApiClient\Exception\Exception
-     *
-     * @return Art4\JsonApiClient\Accessable
+     * @throws \Art4\JsonApiClient\Exception\InputException if something went wrong with the input
+     * @throws \Art4\JsonApiClient\Exception\ValidationException If $jsonString contains invalid JSON API
      */
-    public static function parseResponseString($jsonString)
+    public static function parseResponseString(string $jsonString): Accessable
     {
         $manager = new ErrorAbortManager(new Factory());
 
@@ -46,13 +43,10 @@ final class Parser
     }
 
     /**
-     * @param string $jsonString
-     *
-     * @throws Art4\JsonApiClient\Exception\Exception
-     *
-     * @return Art4\JsonApiClient\Accessable
+     * @throws \Art4\JsonApiClient\Exception\InputException if something went wrong with the input
+     * @throws \Art4\JsonApiClient\Exception\ValidationException If $jsonString contains invalid JSON API
      */
-    public static function parseRequestString($jsonString)
+    public static function parseRequestString(string $jsonString): Accessable
     {
         $manager = new ErrorAbortManager(new Factory());
 
@@ -61,12 +55,8 @@ final class Parser
 
     /**
      * Checks if a string is a valid JSON API response body
-     *
-     * @param string $jsonString
-     *
-     * @return bool true, if $jsonString contains valid JSON API, else false
      */
-    public static function isValidResponseString($jsonString)
+    public static function isValidResponseString(string $jsonString): bool
     {
         try {
             static::parseResponseString($jsonString);
@@ -79,12 +69,8 @@ final class Parser
 
     /**
      * Checks if a string is a valid JSON API request body
-     *
-     * @param string $jsonString
-     *
-     * @return bool true, if $jsonString contains valid JSON API, else false
      */
-    public static function isValidRequestString($jsonString)
+    public static function isValidRequestString(string $jsonString): bool
     {
         try {
             static::parseRequestString($jsonString);

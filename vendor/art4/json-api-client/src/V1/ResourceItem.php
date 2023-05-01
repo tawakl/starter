@@ -19,7 +19,6 @@
 
 namespace Art4\JsonApiClient\V1;
 
-use Art4\JsonApiClient\DocumentInterface;
 use Art4\JsonApiClient\Helper\AbstractElement;
 use Art4\JsonApiClient\Exception\AccessException;
 use Art4\JsonApiClient\Exception\ValidationException;
@@ -38,7 +37,7 @@ final class ResourceItem extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException('Resource has to be an object, "' . gettype($object) . '" given.');
@@ -49,14 +48,10 @@ final class ResourceItem extends AbstractElement
         }
 
         if (! is_string($object->type)) {
-            if (is_object($object->type) or is_array($object->type)) {
-                throw new ValidationException('Resource type cannot be an array or object');
-            }
-
-            @trigger_error('Parsing `type` not as string is deprecated since version 0.10.1 and will be throw an Exception in 1.0. Provide `type` always as string instead', E_USER_DEPRECATED);
+            throw new ValidationException('A resource type MUST be a string');
         }
 
-        $this->set('type', strval($object->type));
+        $this->set('type', $object->type);
 
         if (
             $this->getManager()->getParam('optional_item_id', false) === false
@@ -67,14 +62,10 @@ final class ResourceItem extends AbstractElement
             }
 
             if (! is_string($object->id)) {
-                if (is_object($object->id) or is_array($object->id)) {
-                    throw new ValidationException('Resource id cannot be an array or object');
-                }
-
-                @trigger_error('Parsing `id` not as string is deprecated since version 0.10.1 and will be throw an Exception in 1.0. Provide `id` always as string instead', E_USER_DEPRECATED);
+                throw new ValidationException('A resource id MUST be a string');
             }
 
-            $this->set('id', strval($object->id));
+            $this->set('id', $object->id);
         }
 
         if (property_exists($object, 'meta')) {

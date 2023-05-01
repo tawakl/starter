@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /*
  * This file is part of PHPUnit.
  *
@@ -9,13 +9,16 @@
  */
 namespace PHPUnit\Framework\MockObject\Builder;
 
-use PHPUnit\Framework\MockObject\Matcher\AnyParameters;
-
 /**
- * Builder interface for parameter matchers.
+ * @internal This class is not covered by the backward compatibility promise for PHPUnit
  */
-interface ParametersMatch extends Match
+interface ParametersMatch extends Stub
 {
+    /**
+     * Defines the expectation which must occur before the current is valid.
+     */
+    public function after(string $id): Stub;
+
     /**
      * Sets the parameters to match for, each parameter to this function will
      * be part of match. To perform specific matches or constraints create a
@@ -30,21 +33,17 @@ interface ParametersMatch extends Match
      * // match first parameter with value 'smock' and second identical to 42
      * $b->with('smock', new PHPUnit\Framework\Constraint\IsEqual(42));
      * </code>
-     *
-     * @return ParametersMatch
      */
-    public function with(...$arguments);
+    public function with(mixed ...$arguments): self;
 
     /**
-     * Sets a matcher which allows any kind of parameters.
+     * Sets a rule which allows any kind of parameters.
      *
      * Some examples:
      * <code>
      * // match any number of parameters
      * $b->withAnyParameters();
      * </code>
-     *
-     * @return AnyParameters
      */
-    public function withAnyParameters();
+    public function withAnyParameters(): self;
 }

@@ -41,7 +41,7 @@ final class ErrorLink extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException('Link has to be an object, "' . gettype($object) . '" given.');
@@ -90,10 +90,10 @@ final class ErrorLink extends AbstractElement
     /**
      * Set a link
      *
-     * @param string $name The name of the link
-     * @param string $link The link
+     * @param string              $name The name of the link
+     * @param string|object|mixed $link The link
      */
-    private function setLink($name, $link)
+    private function setLink(string $name, $link): void
     {
         if (! is_string($link) and ! is_object($link)) {
             throw new ValidationException('Link attribute has to be an object or string, "' . gettype($link) . '" given.');
@@ -102,7 +102,7 @@ final class ErrorLink extends AbstractElement
         if (is_string($link)) {
             $this->set($name, strval($link));
 
-            return $this;
+            return;
         }
 
         // Now $link can only be an object

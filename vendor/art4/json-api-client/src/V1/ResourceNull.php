@@ -29,15 +29,23 @@ use Art4\JsonApiClient\Exception\AccessException;
  */
 final class ResourceNull implements Accessable, Element
 {
+    /** @var mixed */
+    private $data;
+    private Manager $manager;
+    private Accessable $parent;
+
     /**
      * Constructor
      *
-     * @param mixed                         $data    The data for this Element
-     * @param Art4\JsonApiClient\Manager    $manager The manager
-     * @param Art4\JsonApiClient\Accessable $parent  The parent
+     * @param mixed                          $data    The data for this Element
+     * @param \Art4\JsonApiClient\Manager    $manager The manager
+     * @param \Art4\JsonApiClient\Accessable $parent  The parent
      */
     public function __construct($data, Manager $manager, Accessable $parent)
     {
+        $this->data = $data;
+        $this->manager = $manager;
+        $this->parent = $parent;
     }
 
     /**
@@ -55,7 +63,7 @@ final class ResourceNull implements Accessable, Element
     /**
      * Returns the keys of all setted values in this resource
      *
-     * @return array Keys of all setted values
+     * @return array<string> Keys of all setted values
      */
     public function getKeys()
     {

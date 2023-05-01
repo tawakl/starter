@@ -19,6 +19,8 @@
 
 namespace Art4\JsonApiClient\Input;
 
+use Art4\JsonApiClient\Exception\InputException;
+
 /**
  * Handles a http Request body as string
  */
@@ -26,7 +28,7 @@ final class RequestStringInput implements Input, RequestInput
 {
     use StringInputTrait;
 
-    private $rawString;
+    private string $rawString;
 
     /**
      * Set the input
@@ -43,15 +45,19 @@ final class RequestStringInput implements Input, RequestInput
     /**
      * Get the input as simple object
      *
-     * This should be a native PH stdClass object, so Manager could
+     * This should be a native PHP stdClass object, so Manager could
      * iterate over all public attributes
      *
-     * @throws InputException if somethin went wrong with the input
-     *
-     * @return stdClass
+     * @throws InputException if something went wrong with the input
      */
-    public function getAsObject()
+    public function getAsObject(): \stdClass
     {
-        return $this->decodeJson($this->rawString);
+        $data = $this->decodeJson($this->rawString);
+
+        if (! $data instanceof \stdClass) {
+            throw new InputException('JSON must contain an object (e.g. `{}`).');
+        }
+
+        return $data;
     }
 }

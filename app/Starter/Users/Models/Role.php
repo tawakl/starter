@@ -3,9 +3,9 @@
 namespace App\Starter\Users\Models;
 
 use App\Starter\Users\UserEnums;
-use Laratrust\Models\LaratrustRole;
+use Laratrust\Models\Role as RoleModel;
 
-class Role extends LaratrustRole
+class Role extends RoleModel
 {
     protected $table = "roles";
     protected $fillable = [

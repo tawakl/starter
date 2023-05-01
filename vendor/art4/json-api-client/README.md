@@ -2,8 +2,7 @@
 
 [![Latest Version](https://img.shields.io/github/release/Art4/json-api-client.svg)](https://github.com/Art4/json-api-client/releases)
 [![Software License](https://img.shields.io/badge/license-GPL3-brightgreen.svg)](LICENSE)
-[![Build Status](https://travis-ci.org/Art4/json-api-client.svg?branch=master)](https://travis-ci.org/Art4/json-api-client)
-[![Coverage Status](https://coveralls.io/repos/Art4/json-api-client/badge.svg?branch=master&service=github)](https://coveralls.io/github/Art4/json-api-client?branch=master)
+[![Build Status](https://github.com/art4/json-api-client/actions/workflows/unit-tests.yml/badge.svg?branch=v1.x)](https://github.com/Art4/json-api-client/actions)
 [![Total Downloads](https://img.shields.io/packagist/dt/art4/json-api-client.svg)](https://packagist.org/packages/art4/json-api-client)
 
 JsonApiClient :construction_worker_woman: is a PHP Library to validate and handle the response body from a [JSON API](http://jsonapi.org) Server.
@@ -27,25 +26,21 @@ Via Composer
 $ composer require art4/json-api-client
 ```
 
-### :building_construction: Development notice
+### :building_construction: Upgrade to v1
 
-**JsonApiClient can be considered as stable** and version 0.10 will be the last development version.
+**Version 1.0 is finally released.** :tada:
 
-After version 0.8 there where no breaking changes. Every change was backward compatible and every functionality that will be removed in future now only triggers a deprecated warning.
+After version 0.8.0 there where no breaking changes. Every change was backward compatible and every functionality that was removed in v1.0 only triggers a deprecation warning in v0.10.
 
-After version 0.10 is released all deprecated code will be removed and version 1.0 will be released.
+To upgrade from v0.x to v1 just update to 0.10.2 and resolve all deprecation warnings.
 
-This simply means for you:
+Or in 3 simple steps:
 
-1. Update to version 0.10
-2. Make your code deprecation free
-3. You are now ready for upgrading to version 1.0 without breaking your code
+1. Update your composer.json to `"art4/json-api-client": "^0.10.2"`
+2. Make your code deprecation warnings free
+3. Upgrade your composer.json to `"art4/json-api-client": "^1.0"` without breaking your app
 
 (Compare the [Symfony upgrade documentation](https://symfony.com/doc/current/setup/upgrade_major.html))
-
-#### :warning: Attention for older versions
-
-Version 0.6.1 and below interprets the pagination links wrong. Make sure you are using the latest version of JsonApiClient. See [#19](https://github.com/Art4/json-api-client/issues/19), [#23](https://github.com/Art4/json-api-client/pull/23) and [#26](https://github.com/Art4/json-api-client/pull/26) for more information.
 
 ## :rocket: Usage
 

@@ -19,6 +19,7 @@
 
 namespace Art4\JsonApiClient\V1;
 
+use Art4\JsonApiClient\Accessable;
 use Art4\JsonApiClient\Helper\AbstractElement;
 use Art4\JsonApiClient\Exception\AccessException;
 use Art4\JsonApiClient\Exception\ValidationException;
@@ -37,7 +38,7 @@ final class Document extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException('Document has to be an object, "' . gettype($object) . '" given.');
@@ -99,14 +100,11 @@ final class Document extends AbstractElement
     /**
      * Parse the data value
      *
-     *
-     * @param null|object $data Data value
+     * @param null|object|array<string, mixed> $data Data value
      *
      * @throws ValidationException If $data isn't null or an object
-     *
-     * @return Accessable The parsed data
      */
-    private function parseData($data)
+    private function parseData($data): Accessable
     {
         if ($data === null) {
             return $this->create('ResourceNull', $data);

@@ -29,23 +29,30 @@ interface Manager
     /**
      * Parse the input
      *
-     * @param Art4\JsonApiClient\Input\Input $input
+     * @deprecated `\Art4\JsonApiClient\Manager::parse()` will add `\Art4\JsonApiClient\Accessable` as a native return type declaration in v2.0. Do the same in your implementation now to avoid errors.
      *
-     * @throws Art4\JsonApiClient\Exception\ValidationException If $input contains invalid JSON API
+     * @throws \Art4\JsonApiClient\Exception\InputException If $input contains invalid JSON API
+     * @throws \Art4\JsonApiClient\Exception\ValidationException If $input contains invalid JSON API
      *
-     * @return Art4\JsonApiClient\Accessable
+     * @return \Art4\JsonApiClient\Accessable
      */
     public function parse(Input $input);
+    // public function parse(Input $input): Accessable;
 
     /**
      * Get a factory from the manager
      *
-     * @return Art4\JsonApiClient\Factory
+     * @deprecated `\Art4\JsonApiClient\Manager::getFactory()` will add `\Art4\JsonApiClient\Factory` as a native return type declaration in v2.0. Do the same in your implementation now to avoid errors.
+     *
+     * @return \Art4\JsonApiClient\Factory
      */
     public function getFactory();
+    // public function getFactory(): Factory;
 
     /**
      * Get a param by key
+     *
+     * @deprecated The `\Art4\JsonApiClient\Manager::getParam()` methods first parameter signature will be `string` in v2.0.
      *
      * @param string $key
      * @param mixed  $default
@@ -53,4 +60,5 @@ interface Manager
      * @return mixed
      */
     public function getParam($key, $default);
+    // public function getParam(string $key, $default);
 }

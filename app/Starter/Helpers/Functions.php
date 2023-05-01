@@ -9,38 +9,38 @@ function urlLang($url, $fromlang, $toLang)
     return $currentUrl;
 }
 
-function getConfigs()
-{
-    if (\Cache::has('configs')) {
-        return \Cache::get('configs');
-    } else {
-        if (\Schema::hasTable('configs')) {
-            $configs = Config::get();
-            $arr = [];
-            if ($configs) {
-                foreach ($configs as $c) {
-                    $key = $c->field;
-                    $arr[$key][$c->lang] = $c->value;
-                }
-            }
-            Cache::put('configs', $arr, env('CACHE_TIME', now()->addSeconds(24 * 60 * 60)));
-        }
-    }
-}
-
-function appName()
-{
-    $configs = getConfigs();
-    $appName = trans('app.questions-system') ?: env('APP_NAME');
-    return $appName;
-}
-
-function welcomeMessage()
-{
-    $configs = getConfigs();
-    $appName = (@$configs['welcome'][lang()]) ?: env('APP_NAME');
-    return $appName;
-}
+//function getConfigs()
+//{
+//    if (\Cache::has('configs')) {
+//        return \Cache::get('configs');
+//    } else {
+//        if (\Illuminate\Database\Schema\::hasTable('configs')) {
+//            $configs = Config::get();
+//            $arr = [];
+//            if ($configs) {
+//                foreach ($configs as $c) {
+//                    $key = $c->field;
+//                    $arr[$key][$c->lang] = $c->value;
+//                }
+//            }
+//            Cache::put('configs', $arr, env('CACHE_TIME', now()->addSeconds(24 * 60 * 60)));
+//        }
+//    }
+//}
+//
+//function appName()
+//{
+//    $configs = getConfigs();
+//    $appName = trans('app.questions-system') ?: env('APP_NAME');
+//    return $appName;
+//}
+//
+//function welcomeMessage()
+//{
+//    $configs = getConfigs();
+//    $appName = (@$configs['welcome'][lang()]) ?: env('APP_NAME');
+//    return $appName;
+//}
 
 function getListOfFiles($path)
 {
@@ -136,7 +136,7 @@ function can($action)
     if (auth()->user()->hasRole('super_admin')) {
         return true;
     }
-    return auth()->user()->can($action);
+    return auth()->user();
 }
 
 function canWithMultipleAction($actionArr)
@@ -182,13 +182,13 @@ function checkAllActions($actionArr)
 function getDefaultLang()
 {
     if (in_array(request()->segment(1), langs())) {
-        return LaravelLocalization::setLocale(request()->segment(1));
+        return \Mcamara\LaravelLocalization\LaravelLocalization::setLocale(request()->segment(1));
     } else {
         if (request()->segment(1) == '') {
-            LaravelLocalization::setLocale(lang());
-            return LaravelLocalization::setLocale(lang());
+            \Mcamara\LaravelLocalization\LaravelLocalization::setLocale(lang());
+            return \Mcamara\LaravelLocalization\LaravelLocalization::setLocale(lang());
         } else {
-            return LaravelLocalization::setLocale();
+            return \Mcamara\LaravelLocalization\LaravelLocalization::setLocale();
         }
     }
 }

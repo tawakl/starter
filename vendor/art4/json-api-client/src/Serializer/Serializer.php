@@ -26,9 +26,9 @@ interface Serializer
     /**
      * Serialize data
      *
-     * @param Art4\JsonApiClient\Accessable $data The data for serialization
+     * @deprecated `\Art4\JsonApiClient\Serializer\Serializer::serialize()` will add `?array` as a native return type declaration in v2.0. Do the same in your implementation now to avoid errors.
      *
-     * @return array
+     * @return array<string, mixed>|null
      */
     public function serialize(Accessable $data);
 }

@@ -38,7 +38,7 @@ class Fractal extends Fractalistic
         if (config('fractal.auto_includes.enabled')) {
             $requestKey = config('fractal.auto_includes.request_key');
 
-            if ($include = app('request')->query($requestKey)) {
+            if ($include = app('request')->get($requestKey)) {
                 $fractal->parseIncludes($include);
             }
         }
@@ -75,20 +75,14 @@ class Fractal extends Fractalistic
             return $fractal->serializeWith(new $serializer($baseUrl));
         }
 
-        return $fractal->serializeWith(new $serializer);
+        return $fractal->serializeWith(new $serializer());
     }
 
-    /**
-     * Return a new JSON response.
-     *
-     * @param  callable|int $statusCode
-     * @param  callable|array $headers
-     * @param  callable|int $options
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function respond($statusCode = 200, $headers = [], $options = 0)
-    {
+    public function respond(
+        callable|int $statusCode = 200,
+        callable|array $headers = [],
+        callable|int $options = 0
+    ): JsonResponse {
         $response = new JsonResponse();
 
         $response->setData($this->createData()->toArray());

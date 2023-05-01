@@ -22,7 +22,6 @@ namespace Art4\JsonApiClient\V1;
 use Art4\JsonApiClient\Exception\AccessException;
 use Art4\JsonApiClient\Exception\ValidationException;
 use Art4\JsonApiClient\Helper\AbstractElement;
-use Art4\JsonApiClient\ResourceIdentifierCollectionInterface;
 
 /**
  * Relationship Link Object
@@ -47,7 +46,7 @@ final class RelationshipLink extends AbstractElement
      *
      * @throws ValidationException
      */
-    protected function parse($object)
+    protected function parse($object): void
     {
         if (! is_object($object)) {
             throw new ValidationException('RelationshipLink has to be an object, "' . gettype($object) . '" given.');
@@ -80,10 +79,9 @@ final class RelationshipLink extends AbstractElement
         }
 
         // Pagination links
-        if ($this->getParent()->has('data') and (
-            $this->getParent()->get('data') instanceof ResourceIdentifierCollection or
-            $this->getParent()->get('data') instanceof ResourceIdentifierCollectionInterface
-        )) {
+        if ($this->getParent()->has('data') and
+            $this->getParent()->get('data') instanceof ResourceIdentifierCollection
+        ) {
             if (array_key_exists('first', $links)) {
                 $this->setPaginationLink('first', $links['first']);
 
@@ -134,12 +132,10 @@ final class RelationshipLink extends AbstractElement
     /**
      * Set a pagination link
      *
-     * @param string $name  The name of the link
-     * @param string $value The link
-     *
-     * @return self
+     * @param string            $name  The name of the link
+     * @param string|null|mixed $value The link
      */
-    private function setPaginationLink($name, $value)
+    private function setPaginationLink(string $name, $value): void
     {
         if (! is_string($value) and ! is_null($value)) {
             throw new ValidationException('property "' . $name . '" has to be a string or null, "' . gettype($value) . '" given.');
@@ -154,12 +150,10 @@ final class RelationshipLink extends AbstractElement
     /**
      * Set a link
      *
-     * @param string $name The name of the link
-     * @param string $link The link
-     *
-     * @return self
+     * @param string              $name The name of the link
+     * @param string|object|mixed $link The link
      */
-    private function setLink($name, $link)
+    private function setLink(string $name, $link): void
     {
         if (! is_string($link) and ! is_object($link)) {
             throw new ValidationException('Link attribute has to be an object or string, "' . gettype($link) . '" given.');

@@ -1,3 +1,6 @@
+
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
+
 # An easy to use Fractal wrapper built for Laravel and Lumen applications
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-fractal.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-fractal)
@@ -16,8 +19,8 @@ use League\Fractal\Manager;
 use League\Fractal\Resource\Collection;
 
 $books = [
-   ['id'=>1, 'title'=>'Hogfather', 'characters' => [...]],
-   ['id'=>2, 'title'=>'Game Of Kill Everyone', 'characters' => [...]]
+   ['id' => 1, 'title' => 'Hogfather', 'characters' => [...]],
+   ['id' => 2, 'title' => 'Game Of Kill Everyone', 'characters' => [...]]
 ];
 
 $manager = new Manager();
@@ -67,9 +70,7 @@ our open source projects [on our website](https://spatie.be/opensource).
 
 ## Support us
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-fractal.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-fractal)
 
 We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
 
@@ -198,7 +199,7 @@ use Spatie\Fractal\Fractal;
 
 Fractal::macro('stats', function ($stats) {
     // transform the passed stats as necessary here
-    return $this->appendMeta(['stats' => $stats]);
+    return $this->addMeta(['stats' => $stats]);
 });
 
 fractal($books, new BookTransformer())->stats(['runtime' => 100])->respond();
@@ -237,11 +238,11 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/spatie/.github/blob/main/CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you've found a bug regarding security please mail [security@spatie.be](mailto:security@spatie.be) instead of using the issue tracker.
 
 ## Credits
 

@@ -2,9 +2,9 @@
 
 namespace App\Starter\Users\Models;
 
-use Laratrust\Models\LaratrustPermission;
+use Laratrust\Models\Permission as PermissionModel;
 
-class Permission extends LaratrustPermission
+class Permission extends PermissionModel
 {
     protected $table = "permissions";
     protected $fillable = [

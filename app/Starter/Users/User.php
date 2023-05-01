@@ -10,13 +10,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Notifications\Notification;
-use Laratrust\Traits\LaratrustUserTrait;
-use Laravel\Scout\Searchable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use Laratrust\Contracts\LaratrustUser;
+use Laratrust\Traits\HasRolesAndPermissions;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Authenticatable implements JWTSubject,LaratrustUser
 {
-    use SoftDeletes, Searchable, LaratrustUserTrait, HasAttach, Notifiable;
+    use SoftDeletes,
+//        LaratrustUser,
+         HasRolesAndPermissions, // add this trait to your user model
+        HasAttach, Notifiable;
 
     protected static $attachFields = [
         'profile_picture' => [

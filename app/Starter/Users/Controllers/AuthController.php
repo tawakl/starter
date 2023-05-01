@@ -59,10 +59,7 @@ class AuthController extends Controller
             flash()->error(trans('auth.There is no account with this mobile number'));
             return back()->withInput();
         }
-//        if (!$row->is_active) {
-//            flash()->error(trans('auth.This account is banned'));
-//            return back()->withInput();
-//        }
+
         if (!Hash::check(trim(request('password')), $row->password)) {
             flash()->error(trans('auth.Trying to login with invalid password'));
             return back()->withInput();
@@ -71,8 +68,6 @@ class AuthController extends Controller
             if (request()->has('to')) {
                 return redirect(request('to'));
             }
-//            $row->last_ip=request()->ip();
-//            $row->last_logged_in_at=date('Y-m-d H:i:s');
             $row->save();
 
             LaravelLocalization::setLocale($row->language ?? config('app.locale'));
