@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b5d7028e6a53ae6688cc3315b543a74",
+    "content-hash": "6185ac5fd035b9ff074923787d85841f",
     "packages": [
         {
             "name": "art4/json-api-client",
@@ -1812,6 +1812,68 @@
             "time": "2023-02-15T16:40:09+00:00"
         },
         {
+            "name": "laravel/ui",
+            "version": "v4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/ui.git",
+                "reference": "05ff7ac1eb55e2dfd10edcfb18c953684d693907"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/05ff7ac1eb55e2dfd10edcfb18c953684d693907",
+                "reference": "05ff7ac1eb55e2dfd10edcfb18c953684d693907",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^9.21|^10.0",
+                "illuminate/filesystem": "^9.21|^10.0",
+                "illuminate/support": "^9.21|^10.0",
+                "illuminate/validation": "^9.21|^10.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^7.0|^8.0",
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Ui\\UiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Ui\\": "src/",
+                    "Illuminate\\Foundation\\Auth\\": "auth-backend/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel UI utilities and presets.",
+            "keywords": [
+                "laravel",
+                "ui"
+            ],
+            "support": {
+                "source": "https://github.com/laravel/ui/tree/v4.2.1"
+            },
+            "time": "2023-02-17T09:17:24+00:00"
+        },
+        {
             "name": "laravelcollective/html",
             "version": "v6.4.1",
             "source": {
@@ -2212,19 +2274,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "3.14.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "e2a279d7f47d9098e479e8b21f7fb8b8de230158"
+                "reference": "a141d430414fcb8bf797a18716b09f759a385bed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/e2a279d7f47d9098e479e8b21f7fb8b8de230158",
-                "reference": "e2a279d7f47d9098e479e8b21f7fb8b8de230158",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/a141d430414fcb8bf797a18716b09f759a385bed",
+                "reference": "a141d430414fcb8bf797a18716b09f759a385bed",
                 "shasum": ""
             },
             "require": {
+                "league/flysystem-local": "^3.0.0",
                 "league/mime-type-detection": "^1.0.0",
                 "php": "^8.0.2"
             },
@@ -2283,7 +2346,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/flysystem/issues",
-                "source": "https://github.com/thephpleague/flysystem/tree/3.14.0"
+                "source": "https://github.com/thephpleague/flysystem/tree/3.15.1"
             },
             "funding": [
                 {
@@ -2295,7 +2358,67 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-11T18:11:47+00:00"
+            "time": "2023-05-04T09:04:26+00:00"
+        },
+        {
+            "name": "league/flysystem-local",
+            "version": "3.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem-local.git",
+                "reference": "543f64c397fefdf9cfeac443ffb6beff602796b3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem-local/zipball/543f64c397fefdf9cfeac443ffb6beff602796b3",
+                "reference": "543f64c397fefdf9cfeac443ffb6beff602796b3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "league/flysystem": "^3.0.0",
+                "league/mime-type-detection": "^1.0.0",
+                "php": "^8.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\Local\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "Local filesystem adapter for Flysystem.",
+            "keywords": [
+                "Flysystem",
+                "file",
+                "files",
+                "filesystem",
+                "local"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/flysystem-local/issues",
+                "source": "https://github.com/thephpleague/flysystem-local/tree/3.15.0"
+            },
+            "funding": [
+                {
+                    "url": "https://ecologi.com/frankdejonge",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/frankdejonge",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-05-02T20:02:14+00:00"
         },
         {
             "name": "league/fractal",
@@ -2599,6 +2722,73 @@
                 }
             ],
             "time": "2023-02-06T13:46:10+00:00"
+        },
+        {
+            "name": "namshi/jose",
+            "version": "7.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/namshi/jose.git",
+                "reference": "89a24d7eb3040e285dd5925fcad992378b82bcff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/namshi/jose/zipball/89a24d7eb3040e285dd5925fcad992378b82bcff",
+                "reference": "89a24d7eb3040e285dd5925fcad992378b82bcff",
+                "shasum": ""
+            },
+            "require": {
+                "ext-date": "*",
+                "ext-hash": "*",
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-spl": "*",
+                "php": ">=5.5",
+                "symfony/polyfill-php56": "^1.0"
+            },
+            "require-dev": {
+                "phpseclib/phpseclib": "^2.0",
+                "phpunit/phpunit": "^4.5|^5.0",
+                "satooshi/php-coveralls": "^1.0"
+            },
+            "suggest": {
+                "ext-openssl": "Allows to use OpenSSL as crypto engine.",
+                "phpseclib/phpseclib": "Allows to use Phpseclib as crypto engine, use version ^2.0."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Namshi\\JOSE\\": "src/Namshi/JOSE/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alessandro Nadalin",
+                    "email": "alessandro.nadalin@gmail.com"
+                },
+                {
+                    "name": "Alessandro Cinelli (cirpo)",
+                    "email": "alessandro.cinelli@gmail.com"
+                }
+            ],
+            "description": "JSON Object Signing and Encryption library for PHP.",
+            "keywords": [
+                "JSON Web Signature",
+                "JSON Web Token",
+                "JWS",
+                "json",
+                "jwt",
+                "token"
+            ],
+            "support": {
+                "issues": "https://github.com/namshi/jose/issues",
+                "source": "https://github.com/namshi/jose/tree/master"
+            },
+            "time": "2016-12-05T07:27:31+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3529,16 +3719,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.11.16",
+            "version": "v0.11.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "151b145906804eea8e5d71fea23bfb470c904bfb"
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/151b145906804eea8e5d71fea23bfb470c904bfb",
-                "reference": "151b145906804eea8e5d71fea23bfb470c904bfb",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
                 "shasum": ""
             },
             "require": {
@@ -3599,9 +3789,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.11.16"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.17"
             },
-            "time": "2023-04-26T12:53:57+00:00"
+            "time": "2023-05-05T20:02:42+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5397,6 +5587,74 @@
                 }
             ],
             "time": "2022-11-03T14:55:06+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php56",
+            "version": "v1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php56.git",
+                "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
+                "reference": "54b8cd7e6c1643d78d011f3be89f3ef1f9f4c675",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.20-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php56/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-23T14:02:19+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -8316,16 +8574,16 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "5.0.1",
+            "version": "5.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "aae9a0a43bff37bd5d8d0311426c87bf36153f02"
+                "reference": "912dc2fbe3e3c1e7873313cc801b100b6c68c87b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/aae9a0a43bff37bd5d8d0311426c87bf36153f02",
-                "reference": "aae9a0a43bff37bd5d8d0311426c87bf36153f02",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/912dc2fbe3e3c1e7873313cc801b100b6c68c87b",
+                "reference": "912dc2fbe3e3c1e7873313cc801b100b6c68c87b",
                 "shasum": ""
             },
             "require": {
@@ -8371,7 +8629,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/diff/issues",
                 "security": "https://github.com/sebastianbergmann/diff/security/policy",
-                "source": "https://github.com/sebastianbergmann/diff/tree/5.0.1"
+                "source": "https://github.com/sebastianbergmann/diff/tree/5.0.3"
             },
             "funding": [
                 {
@@ -8379,7 +8637,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-23T05:12:41+00:00"
+            "time": "2023-05-01T07:48:21+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -9057,16 +9315,16 @@
         },
         {
             "name": "spatie/ignition",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/ignition.git",
-                "reference": "fbcfcabc44e506e40c4d72fd4ddf465e272a600e"
+                "reference": "f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition/zipball/fbcfcabc44e506e40c4d72fd4ddf465e272a600e",
-                "reference": "fbcfcabc44e506e40c4d72fd4ddf465e272a600e",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78",
+                "reference": "f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78",
                 "shasum": ""
             },
             "require": {
@@ -9136,20 +9394,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-27T08:40:07+00:00"
+            "time": "2023-05-04T13:20:26+00:00"
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "3718dfb91bc5aff340af26507a61f0f9605f81e8"
+                "reference": "802c7e27754456e45134f1a9d29ab7df4b6cb9e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/3718dfb91bc5aff340af26507a61f0f9605f81e8",
-                "reference": "3718dfb91bc5aff340af26507a61f0f9605f81e8",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/802c7e27754456e45134f1a9d29ab7df4b6cb9e4",
+                "reference": "802c7e27754456e45134f1a9d29ab7df4b6cb9e4",
                 "shasum": ""
             },
             "require": {
@@ -9228,7 +9486,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-12T09:26:00+00:00"
+            "time": "2023-05-04T13:54:49+00:00"
         },
         {
             "name": "symfony/yaml",

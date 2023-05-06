@@ -44,10 +44,14 @@ return [
     'decrypt_cookies' => false,
 
     'providers' => [
-        'jwt' => Tymon\JWTAuth\Providers\JWT\Namshi::class,
+//        'jwt' => Tymon\JWTAuth\Providers\JWT\Namshi::class,
+//
+//        'auth' => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
+//
+//        'storage' => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
 
-        'auth' => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
-
-        'storage' => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
+        'jwt' => 'Tymon\JWTAuth\Providers\JWT\Namshi',
+        'auth' => 'Tymon\JWTAuth\Providers\Auth\Illuminate',
+        'storage' => 'Tymon\JWTAuth\Providers\Storage\Illuminate'
     ],
 ];

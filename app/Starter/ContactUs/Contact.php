@@ -8,7 +8,9 @@ use Laravel\Scout\Searchable;
 
 class Contact extends Model
 {
-    use SoftDeletes, Searchable;
+    use SoftDeletes
+//        Searchable
+        ;
     protected $table = 'contact_us';
     public $timestamps = true;
     protected $fillable = array('name','mobile_number','description');

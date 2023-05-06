@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
+class ComposerStaticInita689676b4530ca7093895d98bf6c72c2
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -121,6 +121,7 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'N' => 
         array (
             'NunoMaduro\\Collision\\' => 21,
+            'Namshi\\JOSE\\' => 12,
         ),
         'M' => 
         array (
@@ -130,11 +131,13 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         array (
             'League\\MimeTypeDetection\\' => 25,
             'League\\Fractal\\' => 15,
+            'League\\Flysystem\\Local\\' => 23,
             'League\\Flysystem\\' => 17,
             'League\\Config\\' => 14,
             'League\\CommonMark\\' => 18,
             'Lcobucci\\JWT\\' => 13,
             'Lcobucci\\Clock\\' => 15,
+            'Laravel\\Ui\\' => 11,
             'Laravel\\Tinker\\' => 15,
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Scout\\' => 14,
@@ -149,6 +152,7 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         array (
             'Intervention\\Image\\' => 19,
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Foundation\\Auth\\' => 27,
             'Illuminate\\' => 11,
         ),
         'G' => 
@@ -429,6 +433,10 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         array (
             0 => __DIR__ . '/..' . '/nunomaduro/collision/src',
         ),
+        'Namshi\\JOSE\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE',
+        ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
@@ -440,6 +448,10 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'League\\Fractal\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/fractal/src',
+        ),
+        'League\\Flysystem\\Local\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/flysystem-local',
         ),
         'League\\Flysystem\\' => 
         array (
@@ -460,6 +472,10 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'Lcobucci\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/lcobucci/clock/src',
+        ),
+        'Laravel\\Ui\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/src',
         ),
         'Laravel\\Tinker\\' => 
         array (
@@ -494,6 +510,10 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
             1 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections',
             2 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Conditionable',
+        ),
+        'Illuminate\\Foundation\\Auth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/ui/auth-backend',
         ),
         'Illuminate\\' => 
         array (
@@ -2411,8 +2431,16 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'Illuminate\\Foundation\\Application' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Application.php',
         'Illuminate\\Foundation\\Auth\\Access\\Authorizable' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/Authorizable.php',
         'Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php',
+        'Illuminate\\Foundation\\Auth\\AuthenticatesUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/AuthenticatesUsers.php',
+        'Illuminate\\Foundation\\Auth\\ConfirmsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ConfirmsPasswords.php',
         'Illuminate\\Foundation\\Auth\\EmailVerificationRequest' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/EmailVerificationRequest.php',
+        'Illuminate\\Foundation\\Auth\\RedirectsUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RedirectsUsers.php',
+        'Illuminate\\Foundation\\Auth\\RegistersUsers' => __DIR__ . '/..' . '/laravel/ui/auth-backend/RegistersUsers.php',
+        'Illuminate\\Foundation\\Auth\\ResetsPasswords' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ResetsPasswords.php',
+        'Illuminate\\Foundation\\Auth\\SendsPasswordResetEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/SendsPasswordResetEmails.php',
+        'Illuminate\\Foundation\\Auth\\ThrottlesLogins' => __DIR__ . '/..' . '/laravel/ui/auth-backend/ThrottlesLogins.php',
         'Illuminate\\Foundation\\Auth\\User' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Auth/User.php',
+        'Illuminate\\Foundation\\Auth\\VerifiesEmails' => __DIR__ . '/..' . '/laravel/ui/auth-backend/VerifiesEmails.php',
         'Illuminate\\Foundation\\Bootstrap\\BootProviders' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php',
         'Illuminate\\Foundation\\Bootstrap\\HandleExceptions' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php',
         'Illuminate\\Foundation\\Bootstrap\\LoadConfiguration' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/Bootstrap/LoadConfiguration.php',
@@ -3281,6 +3309,15 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
         'Laravel\\Tinker\\TinkerServiceProvider' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerServiceProvider.php',
+        'Laravel\\Ui\\AuthCommand' => __DIR__ . '/..' . '/laravel/ui/src/AuthCommand.php',
+        'Laravel\\Ui\\AuthRouteMethods' => __DIR__ . '/..' . '/laravel/ui/src/AuthRouteMethods.php',
+        'Laravel\\Ui\\ControllersCommand' => __DIR__ . '/..' . '/laravel/ui/src/ControllersCommand.php',
+        'Laravel\\Ui\\Presets\\Bootstrap' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Bootstrap.php',
+        'Laravel\\Ui\\Presets\\Preset' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Preset.php',
+        'Laravel\\Ui\\Presets\\React' => __DIR__ . '/..' . '/laravel/ui/src/Presets/React.php',
+        'Laravel\\Ui\\Presets\\Vue' => __DIR__ . '/..' . '/laravel/ui/src/Presets/Vue.php',
+        'Laravel\\Ui\\UiCommand' => __DIR__ . '/..' . '/laravel/ui/src/UiCommand.php',
+        'Laravel\\Ui\\UiServiceProvider' => __DIR__ . '/..' . '/laravel/ui/src/UiServiceProvider.php',
         'Lcobucci\\Clock\\Clock' => __DIR__ . '/..' . '/lcobucci/clock/src/Clock.php',
         'Lcobucci\\Clock\\FrozenClock' => __DIR__ . '/..' . '/lcobucci/clock/src/FrozenClock.php',
         'Lcobucci\\Clock\\SystemClock' => __DIR__ . '/..' . '/lcobucci/clock/src/SystemClock.php',
@@ -3686,8 +3723,8 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'League\\Flysystem\\FilesystemWriter' => __DIR__ . '/..' . '/league/flysystem/src/FilesystemWriter.php',
         'League\\Flysystem\\InvalidStreamProvided' => __DIR__ . '/..' . '/league/flysystem/src/InvalidStreamProvided.php',
         'League\\Flysystem\\InvalidVisibilityProvided' => __DIR__ . '/..' . '/league/flysystem/src/InvalidVisibilityProvided.php',
-        'League\\Flysystem\\Local\\FallbackMimeTypeDetector' => __DIR__ . '/..' . '/league/flysystem/src/Local/FallbackMimeTypeDetector.php',
-        'League\\Flysystem\\Local\\LocalFilesystemAdapter' => __DIR__ . '/..' . '/league/flysystem/src/Local/LocalFilesystemAdapter.php',
+        'League\\Flysystem\\Local\\FallbackMimeTypeDetector' => __DIR__ . '/..' . '/league/flysystem-local/FallbackMimeTypeDetector.php',
+        'League\\Flysystem\\Local\\LocalFilesystemAdapter' => __DIR__ . '/..' . '/league/flysystem-local/LocalFilesystemAdapter.php',
         'League\\Flysystem\\MountManager' => __DIR__ . '/..' . '/league/flysystem/src/MountManager.php',
         'League\\Flysystem\\PathNormalizer' => __DIR__ . '/..' . '/league/flysystem/src/PathNormalizer.php',
         'League\\Flysystem\\PathPrefixer' => __DIR__ . '/..' . '/league/flysystem/src/PathPrefixer.php',
@@ -3978,6 +4015,32 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'Monolog\\SignalHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/SignalHandler.php',
         'Monolog\\Test\\TestCase' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Test/TestCase.php',
         'Monolog\\Utils' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Utils.php',
+        'Namshi\\JOSE\\Base64\\Base64Encoder' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Base64/Base64Encoder.php',
+        'Namshi\\JOSE\\Base64\\Base64UrlSafeEncoder' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Base64/Base64UrlSafeEncoder.php',
+        'Namshi\\JOSE\\Base64\\Encoder' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Base64/Encoder.php',
+        'Namshi\\JOSE\\JWS' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/JWS.php',
+        'Namshi\\JOSE\\JWT' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/JWT.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\ECDSA' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ECDSA.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\ES256' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ES256.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\ES384' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ES384.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\ES512' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/ES512.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\HMAC' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HMAC.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\HS256' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HS256.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\HS384' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HS384.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\HS512' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/HS512.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\None' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/None.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\PublicKey' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/PublicKey.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\RS256' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RS256.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\RS384' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RS384.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\RS512' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RS512.php',
+        'Namshi\\JOSE\\Signer\\OpenSSL\\RSA' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/OpenSSL/RSA.php',
+        'Namshi\\JOSE\\Signer\\SecLib\\PublicKey' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/SecLib/PublicKey.php',
+        'Namshi\\JOSE\\Signer\\SecLib\\RS256' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RS256.php',
+        'Namshi\\JOSE\\Signer\\SecLib\\RS384' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RS384.php',
+        'Namshi\\JOSE\\Signer\\SecLib\\RS512' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RS512.php',
+        'Namshi\\JOSE\\Signer\\SecLib\\RSA' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/SecLib/RSA.php',
+        'Namshi\\JOSE\\Signer\\SignerInterface' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/Signer/SignerInterface.php',
+        'Namshi\\JOSE\\SimpleJWS' => __DIR__ . '/..' . '/namshi/jose/src/Namshi/JOSE/SimpleJWS.php',
         'Nette\\ArgumentOutOfRangeException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DeprecatedException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
         'Nette\\DirectoryNotFoundException' => __DIR__ . '/..' . '/nette/utils/src/exceptions.php',
@@ -7016,6 +7079,7 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
         'Tymon\\JWTAuth\\Providers\\AbstractServiceProvider' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/AbstractServiceProvider.php',
         'Tymon\\JWTAuth\\Providers\\Auth\\Illuminate' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/Auth/Illuminate.php',
         'Tymon\\JWTAuth\\Providers\\JWT\\Lcobucci' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/JWT/Lcobucci.php',
+        'Tymon\\JWTAuth\\Providers\\JWT\\Namshi' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/JWT/Namshi.php',
         'Tymon\\JWTAuth\\Providers\\JWT\\Provider' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/JWT/Provider.php',
         'Tymon\\JWTAuth\\Providers\\LaravelServiceProvider' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/LaravelServiceProvider.php',
         'Tymon\\JWTAuth\\Providers\\LumenServiceProvider' => __DIR__ . '/..' . '/tymon/jwt-auth/src/Providers/LumenServiceProvider.php',
@@ -7059,10 +7123,10 @@ class ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit33b27b90c1d28fb96ea9f26c2eed69c8::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita689676b4530ca7093895d98bf6c72c2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita689676b4530ca7093895d98bf6c72c2::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita689676b4530ca7093895d98bf6c72c2::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita689676b4530ca7093895d98bf6c72c2::$classMap;
 
         }, null, ClassLoader::class);
     }

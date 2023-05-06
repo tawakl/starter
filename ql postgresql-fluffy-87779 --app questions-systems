@@ -1,0 +1,5 @@
+ id |    type     |    name     | governorate | city  | result |             email              | email_verified_at | mobile_number |                           password                           | remember_token | confirm_token | profile_picture |     created_at      |     updated_at      | deleted_at | lang_age | move_age | think_age | social_age | self_age | test_age | age | birth_date 
+----+-------------+-------------+-------------+-------+--------+--------------------------------+-------------------+---------------+--------------------------------------------------------------+----------------+---------------+-----------------+---------------------+---------------------+------------+----------+----------+-----------+------------+----------+----------+-----+------------
+  1 | super_admin | Super Admin | الغربيه     | سمنود |        | super_admin503@super_admin.com |                   | 0123456789    | $2y$10$gIJOK6jmLhSyP/DVjacCK.jMXgQsI7WUfFQAKs7oOT4f463Ac.Ola |                |               |                 | 2023-05-01 13:33:15 | 2023-05-01 13:33:15 |            |          |          |           |            |          |          |     | 
+(1 row)
+
